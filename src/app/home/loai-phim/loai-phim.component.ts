@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loai-phim.component.scss']
 })
 export class LoaiPhimComponent implements OnInit {
-
+  dangchieuStatus:boolean = true;
   constructor() { }
-
+  HienPhimDangChieu(){
+    this.dangchieuStatus = true;
+  }
+  HienPhimSapChieu(){
+    this.dangchieuStatus = false;
+  }
   ngOnInit() {
   }
 

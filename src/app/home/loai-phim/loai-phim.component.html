@@ -1,3 +1,18 @@
-<p>
-  loai-phim works!
-</p>
+<div class="row my-4">
+  <div class="col-12 text-center">
+    <button class="btn mr-2 " [ngClass]="{'btn-success':dangchieuStatus}" (click)="HienPhimDangChieu()">Phim Dang Chieu</button>
+    <button class="btn " [ngClass]="{'btn-success':!dangchieuStatus}" (click)="HienPhimSapChieu()">Phim Sap Chieu</button>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 " *ngIf="dangchieuStatus; else PhimSapChieu">
+    <app-phim-dang-chieu></app-phim-dang-chieu>
+  </div>
+  <ng-template #PhimSapChieu>
+      <div class="col-12" >
+          <app-phim-sap-chieu></app-phim-sap-chieu>
+        </div>
+  </ng-template>
+  
+</div>

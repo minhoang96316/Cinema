@@ -14,6 +14,7 @@ import { ReviewComponent } from './review/review.component';
 import { SliderComponent } from './slider/slider.component';
 import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
+import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
 
 
 
@@ -32,7 +33,8 @@ import { TinTucComponent } from './tin-tuc/tin-tuc.component';
     ReviewComponent,
     SliderComponent,
     ThongTinLienHeComponent,
-    TinTucComponent ],
+    TinTucComponent,
+    ItemTinTucComponent ],
   imports: [
     CommonModule,
     
@@ -51,7 +53,8 @@ import { TinTucComponent } from './tin-tuc/tin-tuc.component';
     ReviewComponent,
     SliderComponent,
     ThongTinLienHeComponent,
-    TinTucComponent
+    TinTucComponent,
+    ItemTinTucComponent
     
   ]
 })

@@ -1,3 +1,7 @@
-<p>
-  phim-sap-chieu works!
-</p>
+<div class="owl-carousel owl-theme">
+    <div class="item" *ngFor="let phim of DanhSachPhimSapChieu">
+        <app-item-phim [Itemphim]=phim></app-item-phim>
+      </div>
+  
+
+</div>

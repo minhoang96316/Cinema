@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TinTucComponent implements OnInit {
 
+  loaiTin:string = "DienAnh"
   constructor() { }
-
+  ChonLoaiTin(val){
+    this.loaiTin = val;
+  }
   ngOnInit() {
   }
 
