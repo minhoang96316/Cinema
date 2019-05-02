@@ -15,6 +15,7 @@ import { SliderComponent } from './slider/slider.component';
 import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
+import { LayoutModule } from '../layout/layout.module';
 
 
 
@@ -36,7 +37,7 @@ import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
     TinTucComponent,
     ItemTinTucComponent ],
   imports: [
-    CommonModule,
+    CommonModule,LayoutModule
     
   ],
   exports: [

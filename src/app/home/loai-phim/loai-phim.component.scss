@@ -1,0 +1,14 @@
+.button_content{
+    font-size: 25px;
+    color: red;
+    border: unset;
+    box-shadow: none;
+    
+}
+.button_content:hover{
+    font-size: 30px;
+    transition: all 0.5s;
+}
+.button_content:focus{
+    box-shadow: none;
+}
