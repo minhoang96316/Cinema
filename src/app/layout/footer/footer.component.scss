@@ -1,6 +1,6 @@
 .myFooter{
     background-color: #222222;
-    height: 200px;
+    height: 170px;
 }
 .myFooter .container {
     margin-left: 18%;
@@ -11,7 +11,7 @@
 }
 .footer_content_title{
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .footer_content_title h1{
     color: white;
@@ -29,6 +29,7 @@
 }
 .footer_content_item a{
     color: gray;
+    font-size: 13px;
 }
 .footer_content_item a:hover{
     text-decoration: none;
