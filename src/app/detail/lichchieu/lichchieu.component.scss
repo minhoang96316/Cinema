@@ -1,11 +1,34 @@
 .myShowtimes{
-
+ padding: 50px 0;
 }
 .line{
 
-    width: 80%;
-    height: 3px;
-    background-color: #FB4226;
-    margin: 0 auto;
+    // width: 80%;
+    // height: 3px;
+    // background-color: #FB4226;
+    // margin: 0 auto;
 
+}
+.list_film{
+    background-color: #FB4226;
+    width: 80%;
+    margin:  0 auto;
+    height: 400px;
+    
+}
+.time_list{   
+    width: 60%;
+   margin: 0 auto;
+}
+.DayofWeek{
+    border: solid 1px #b5d2da;
+    width: 80px;
+    color: #b5d2dax;
+}
+.line2{
+    height: 1px;
+    width: 100%;
+    background-color: #b5d2da;
+    margin-top: 20px;
+    
 }
