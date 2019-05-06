@@ -20,6 +20,7 @@ import { TrangChiTietComponent } from './trang-chi-tiet/trang-chi-tiet.component
 import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { NoiDungComponent } from './noi-dung/noi-dung.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { TrangChuComponent } from './trang-chu/trang-chu.component';
 
 
 
@@ -42,7 +43,8 @@ import { HomeRoutingModule } from './home-routing.module';
     ItemTinTucComponent,
     TrangChiTietComponent,
     LichChieuComponent,
-    NoiDungComponent],
+    NoiDungComponent,
+    TrangChuComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -64,8 +66,8 @@ import { HomeRoutingModule } from './home-routing.module';
     SliderComponent,
     ThongTinLienHeComponent,
     TinTucComponent,
-    ItemTinTucComponent
-
+    ItemTinTucComponent,
+    TrangChuComponent
   ]
 })
 export class HomeModule { }
