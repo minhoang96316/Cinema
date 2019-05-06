@@ -35,10 +35,10 @@ import { LayoutModule } from '../layout/layout.module';
     SliderComponent,
     ThongTinLienHeComponent,
     TinTucComponent,
-    ItemTinTucComponent ],
+    ItemTinTucComponent],
   imports: [
-    CommonModule,LayoutModule
-    
+    CommonModule, LayoutModule
+
   ],
   exports: [
     LayoutHomeComponent,
@@ -56,7 +56,7 @@ import { LayoutModule } from '../layout/layout.module';
     ThongTinLienHeComponent,
     TinTucComponent,
     ItemTinTucComponent
-    
+
   ]
 })
 export class HomeModule { }
