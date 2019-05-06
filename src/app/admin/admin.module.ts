@@ -6,15 +6,17 @@ import { QuanLyNguoiDungComponent } from './quan-ly-nguoi-dung/quan-ly-nguoi-dun
 import { ThongKeComponent } from './thong-ke/thong-ke.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
+import { AdminRoutingModule } from './admin-routing.module';
 
 @NgModule({
   declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AdminRoutingModule
   ],
   exports: [
-    DangnhapComponent,DangkyComponent,LayoutAdminComponent
+    DangnhapComponent, DangkyComponent, LayoutAdminComponent
   ]
-  
+
 })
 export class AdminModule { }

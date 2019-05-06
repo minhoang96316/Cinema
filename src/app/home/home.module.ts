@@ -16,6 +16,10 @@ import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.c
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
 import { LayoutModule } from '../layout/layout.module';
+import { TrangChiTietComponent } from './trang-chi-tiet/trang-chi-tiet.component';
+import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
+import { NoiDungComponent } from './noi-dung/noi-dung.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -35,9 +39,14 @@ import { LayoutModule } from '../layout/layout.module';
     SliderComponent,
     ThongTinLienHeComponent,
     TinTucComponent,
-    ItemTinTucComponent],
+    ItemTinTucComponent,
+    TrangChiTietComponent,
+    LichChieuComponent,
+    NoiDungComponent],
   imports: [
-    CommonModule, LayoutModule
+    CommonModule,
+    LayoutModule,
+    HomeRoutingModule,
 
   ],
   exports: [
