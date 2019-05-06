@@ -1,3 +1,33 @@
-<p>
-  layout-admin works!
-</p>
+<div class="nav_bar">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Admin</a>
+  
+    <!-- Links -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#user">User</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#film">Film</a>
+      </li>
+      
+  </ul>
+  </nav>
+</div>
+<div class="tab-content">
+  <div class="tab-pane active" id="user">
+    <div class="container">
+        <app-quan-ly-nguoi-dung></app-quan-ly-nguoi-dung>
+    </div>
+    
+  </div>
+  <div class="tab-pane  fade" id="film">
+    <div class="container">
+        <app-quan-ly-phim></app-quan-ly-phim>
+    </div>
+    
+  </div>
+  <div class="tab-pane  fade" id="wed">...</div>
+</div>
+
