@@ -9,6 +9,11 @@
     font-size: 30px;
     transition: all 0.5s;
 }
-.button_content:focus{
+
+.btn:focus{
     box-shadow: none;
+    border: unset;
+}
+.btn:active{
+    border: unset;
 }
