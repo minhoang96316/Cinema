@@ -11,7 +11,10 @@ export class TinTucComponent implements OnInit {
   constructor() { }
   ChonLoaiTin(val){
     this.loaiTin = val;
+  
   }
+ 
+  
   ngOnInit() {
   }
 
