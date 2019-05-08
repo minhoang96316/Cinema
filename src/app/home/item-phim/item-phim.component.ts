@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Phim } from 'src/app/share/model/Phim';
 
 @Component({
   selector: 'app-item-phim',
@@ -6,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./item-phim.component.scss']
 })
 export class ItemPhimComponent implements OnInit {
-  @Input() Itemphim;
+  @Input() Itemphim: Phim;
   constructor() { }
 
   ngOnInit() {

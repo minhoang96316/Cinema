@@ -9,7 +9,7 @@ const homeRoutes: Routes = [
     path: '', component: LayoutHomeComponent, children: [
       {path: '', component: TrangChuComponent},
       { path: 'trang-chu', component: TrangChuComponent },
-      { path: 'trang-chi-tiet', component: TrangChiTietComponent }]
+      { path: 'trang-chi-tiet/:maPhim', component: TrangChiTietComponent }]
   },
 
 ];
