@@ -21,4 +21,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .owl-next span{
     font-size:70px;
     }
+    .owl-prev:focus{
+        outline: none;
+        border: unset;
+
+    }
+    .owl-next:focus{
+        outline: none;
+        border: unset;
+        
+    }
+   
     

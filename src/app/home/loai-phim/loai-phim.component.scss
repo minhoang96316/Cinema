@@ -1,19 +1,37 @@
-.button_content{
+ul{
+    display: inline-flex;
+}
+li{
     font-size: 25px;
-    color: red;
     border: unset;
     box-shadow: none;
+    text-decoration: unset;
+    list-style: none;
     
 }
-.button_content:hover{
+li span{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+li span:hover{
     font-size: 30px;
+    text-decoration: none;
     transition: all 0.5s;
 }
+.li_content:hover{
+    font-size: 30px;
+    transition: all 0.5s;
+    text-decoration: unset;
+}
+.li_content span{
+    font-size: 30px;
+    color: #FB4226;
+}
+.li_content span:hover{
+    color: #FB4226;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-.btn:focus{
-    box-shadow: none;
-    border: unset;
-}
-.btn:active{
-    border: unset;
-}
+

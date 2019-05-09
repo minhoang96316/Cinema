@@ -1,7 +1,11 @@
 <div class="row my-4">
   <div class="col-12 text-center">
-    <button class="btn mr-2 " [ngClass]="{'button_content':dangchieuStatus}" (click)="HienPhimDangChieu()">Đang Chiếu</button>
-    <button class="btn " [ngClass]="{'button_content':!dangchieuStatus}" (click)="HienPhimSapChieu()">Sắp Chiếu</button>
+    <ul>
+      <li class=" mr-4"  [ngClass]="{'li_content':dangchieuStatus}" (click)="HienPhimDangChieu()"><span>Đang Chiếu</span></li>
+      <li class="" [ngClass]="{'li_content':!dangchieuStatus}" (click)="HienPhimSapChieu()"><span>Sắp Chiếu</span></li>
+    </ul>
+    <!-- <button class="btn mr-2 " [ngClass]="{'button_content':dangchieuStatus}" (click)="HienPhimDangChieu()">Đang Chiếu</button>
+    <button class="btn " [ngClass]="{'button_content':!dangchieuStatus}" (click)="HienPhimSapChieu()">Sắp Chiếu</button> -->
 
   </div>
 </div>
