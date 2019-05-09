@@ -1,5 +1,5 @@
-<div class="movie__item item">
+<div class="movie__item item" (mouseover)="showName()" (mouseleave)="isShowName=true">
     <img [src]="Itemphim.HinhAnh" alt="" style="width: 270px;height:357px">
-    <p>{{Itemphim.TenPhim}}</p>
-    <button>Xem Thêm</button>
+    <p *ngIf="isShowName" >{{Itemphim.TenPhim}}</p>
+    <button *ngIf="isShowButton" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Xem Thêm</button> 
 </div>

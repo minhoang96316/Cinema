@@ -8,9 +8,25 @@ import { Phim } from 'src/app/share/model/Phim';
 })
 export class ItemPhimComponent implements OnInit {
   @Input() Itemphim: Phim;
+  isShowButton = false;
+  isShowName = true;
+  showButton(): boolean {
+    if (typeof this.Itemphim.MaPhim === 'number') {
+      return this.isShowButton = true;
+    }
+    return this.isShowButton = false;
+  }
+  showName(): boolean {
+    if (this.isShowButton === true) {
+      return this.isShowName = false;
+    }
+    return this.isShowName = true;
+  }
   constructor() { }
 
   ngOnInit() {
+    this.showButton();
+    //this.showName();
   }
 
 }
