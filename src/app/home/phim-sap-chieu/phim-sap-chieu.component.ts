@@ -17,7 +17,6 @@ export class PhimSapChieuComponent implements OnInit ,AfterViewInit {
   ];
 
   constructor() { }
-
   ngOnInit() {
 
   }

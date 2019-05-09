@@ -49,7 +49,7 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
           }
         }
       });
-    }, 500);
+    }, 400);
 
   }
 

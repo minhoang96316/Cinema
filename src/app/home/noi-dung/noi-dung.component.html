@@ -2,9 +2,9 @@
   <div class="film_detail">
     <h1>Ten Phim</h1>
   </div>
-  <div class="row">
-    <div class="col-4">
-      <img src="../../assets/img/nhoc-ma-sieu-quay-the-little-vampire-3d-15090331183157.jpg" alt="">
+  <div class="row" *ngIf="isShowContent">
+    <div class="col-4" >
+      <img src={{phim.HinhAnh}} alt="">
     </div>
     <div class="col-8">
       <h1>Ten Phim</h1>

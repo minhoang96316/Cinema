@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trang-chi-tiet.component.scss']
 })
 export class TrangChiTietComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
