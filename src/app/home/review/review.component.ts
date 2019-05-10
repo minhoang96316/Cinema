@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewComponent implements OnInit {
 
   DanhSachReview = [
-    {TieuDeTinTuc:"Sự Kiện KFC",HinhAnh:'http://billnguyen.com/wp-content/uploads/2014/04/Event-Showcase1-2.jpg'},
-    {TieuDeTinTuc:"Sự Kiện Lotte",HinhAnh:'https://static.ybox.vn/2018/3/7/6196b406-2228-11e8-b466-56c566ee3692.png'},
-    {TieuDeTinTuc:"Sự Kiện Texas",HinhAnh:'http://cafefcdn.com/thumb_w/650/2017/2061185419-kien-nhan-1501344528133.jpg'}, 
+    {TieuDeTinTuc:"Avengers: Endgame - Cái kết toàn vẹn cho chặng đường 11 năm của MCU",HinhAnh:'../../../assets/img/review-1.jpg'},
+    {TieuDeTinTuc:"[Review] Captain Marvel - Cô gái có đôi tay vàng của làng siêu anh hùng",HinhAnh:'../../../assets/img/review-2.jpg'},
+    {TieuDeTinTuc:"[Review] Hai Phượng: Phim hành động Việt máu lửa nhất kể từ Dòng Máu Anh Hùng",HinhAnh:'../../../assets/img/review-3.jpg'}, 
   ]
 
   constructor() { }

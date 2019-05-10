@@ -10,11 +10,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-12 " *ngIf="dangchieuStatus; else PhimSapChieu">
+  <div class="list_film " *ngIf="dangchieuStatus; else PhimSapChieu">
     <app-phim-dang-chieu></app-phim-dang-chieu>
   </div>
   <ng-template #PhimSapChieu>
-      <div class="col-12" >
+      <div class="list_film2" >
           <app-phim-sap-chieu></app-phim-sap-chieu>
         </div>
   </ng-template>

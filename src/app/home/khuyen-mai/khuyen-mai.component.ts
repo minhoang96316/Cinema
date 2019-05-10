@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class KhuyenMaiComponent implements OnInit {
 
   DanhSachKhuyenMai = [
-    {TieuDeTinTuc:"Khuyến Mãi 1",HinhAnh:'https://media.vietteltelecom.vn/upload/ckfinder/images/3112.png'},
-    {TieuDeTinTuc:"Khuyến Mãi 2",HinhAnh:'https://topshare.s3.amazonaws.com/production/posts/pictures/000/000/145/original/kichi-kichi-khuyen-mai.jpg?1502809882'},
-    {TieuDeTinTuc:"Khuyến Mãi 3",HinhAnh:'http://giaydantuong365.com/uploads/user/2/khuyenmaigiay/khuyen-mai-giay-dan-tuong-dep-gia-re-cuc-soc.jpg'}, 
+    {TieuDeTinTuc:"Mua 2 Vé Cinestar Qua ZaloPay Chỉ 1.000đ/vé",HinhAnh:'../../../assets/img/khuyen-mai-1.jpg'},
+    {TieuDeTinTuc:"Mua Vé BHD Star Trên 123Phim Bằng ZaloPay: 1.000đ/vé",HinhAnh:'../../../assets/img/khuyen-mai-2.jpg'},
+    {TieuDeTinTuc:"[Galaxy Tràng Thi] Xem Phim Hay, Say Quà Tặng",HinhAnh:'../../../assets/img/khuyen-mai-3.jpg'}, 
   ]
 
   constructor() { }

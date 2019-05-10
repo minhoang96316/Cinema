@@ -1,5 +1,5 @@
 .myFooter{
-    background-color: #222222;
+    background-color: #1C1B1B;
     height: 200px;
 }
 .footer_content{
@@ -16,18 +16,19 @@
 
 }
 .item2{
-    margin-left: 100px;
+    margin-left: 50px;
 }
-.footer_content_item a{
+.footer_item a{
     color: #949494;
     font-weight: 500;
 }
-.footer_content_item a:hover{
+.footer_item a:hover{
     color: white;
     text-decoration: unset;
     transition: all 0.5s;
 }
 .footer_content i{
+    cursor: pointer;
    
     font-size: 25px;
     border-radius: 50%;
@@ -37,6 +38,17 @@
     background-color: white;
     padding: 7px 11px;
 }
+.footer_content i:hover{
+    opacity: .7;
+}
 .title_social p{
     margin-left: 60px;
+}
+.footer_content_item img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.footer_content_item:hover{
+    opacity: .7;
 }

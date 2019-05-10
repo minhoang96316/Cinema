@@ -1,5 +1,12 @@
 <div class="movie__item item" (mouseover)="showName()" (mouseleave)="isShowName=true">
-    <img [src]="Itemphim.HinhAnh" alt="" style="width: 270px;height:357px">
-    <p *ngIf="isShowName" >{{Itemphim.TenPhim}}</p>
-    <button *ngIf="isShowButton" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Xem Thêm</button> 
+    <img [src]="Itemphim.HinhAnh" alt="" style="width: 200px;height:300px">
+    <div class="background" style="width: 200px;height:300px">
+
+    </div>
+    <p *ngIf="isShowName">{{Itemphim.TenPhim}}</p>
+    <button  *ngIf="isShowButton" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Đặt Vé</button> 
+    <div class="movie_play_button" >
+            <i class="fa fa-play"></i>
+    </div>
+    
 </div>

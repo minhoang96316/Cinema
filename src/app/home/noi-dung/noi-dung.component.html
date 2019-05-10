@@ -1,24 +1,14 @@
-<div class="container myDetail">
-  <div class="film_detail">
-    <h1>Ten Phim</h1>
-  </div>
+<div class=" myDetail">
+
   <div class="row" *ngIf="isShowContent">
-    <div class="col-4" >
+    <div class=" detail_img" >
       <img src={{phim.HinhAnh}} alt="">
     </div>
-    <div class="col-8">
-      <h1>Ten Phim</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea temporibus obcaecati eaque atque, vel at.</p>
-      <ul>
-        <li><span>Phân Loại</span></li>
-        <li><span>Đạo Diễn</span></li>
-        <li><span>Diễn Viên</span></li>
-        <li><span>Thể Loại</span></li>
-        <li><span>Khởi Chiếu</span></li>
-        <li><span>Thời Lượng</span></li>
-        <li><span>Ngôn Ngữ</span></li>
-      </ul>
-      <button class="btn btn-success">Đặt Vé</button>
+    <div class="col-8 detail_content" >
+      <span>{{phim.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</span>
+      <h1>{{phim.TenPhim}}</h1>
+      <p>{{phim.MoTa}}</p>
+      <button class="btn btn-danger">Mua Vé</button>
     </div>
   </div>
 

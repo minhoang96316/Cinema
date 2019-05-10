@@ -22,6 +22,7 @@ export class ItemPhimComponent implements OnInit {
     }
     return this.isShowName = true;
   }
+  
   constructor() { }
 
   ngOnInit() {
