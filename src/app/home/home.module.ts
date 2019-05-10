@@ -21,6 +21,7 @@ import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { NoiDungComponent } from './noi-dung/noi-dung.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
+import { UngDungComponent } from './ung-dung/ung-dung.component';
 
 
 
@@ -44,7 +45,8 @@ import { TrangChuComponent } from './trang-chu/trang-chu.component';
     TrangChiTietComponent,
     LichChieuComponent,
     NoiDungComponent,
-    TrangChuComponent],
+    TrangChuComponent,
+    UngDungComponent],
   imports: [
     CommonModule,
     LayoutModule,

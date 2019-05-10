@@ -1,0 +1,45 @@
+img{
+    width: 100%;
+}
+h1{
+    font-size: 30px;
+    color: white;
+    line-height: 50px;
+}
+p{
+    color: white;
+}
+
+.myApp{
+    background-image: url('../../../assets/img/backapp.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 600px;
+    padding: 50px 0;
+}
+.app_content{
+    width: 70%;
+}
+.app_content .left{
+    padding: 100px 0;
+}
+button{
+    background-color: #fb4226;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: medium;
+    font-weight:700;
+    border: none;
+    border-radius: 4px;
+}
+.right{
+    position: relative;
+}
+.app_img{
+    position: absolute;
+    width: 184px;
+    height: 341px;
+    top: 47px;
+    left: 143px;
+}
