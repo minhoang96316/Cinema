@@ -20,4 +20,32 @@ export class PhimService {
     const url = `http://svcy2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`
     return this.http.get<Phim>(url);
   }
+
+  public ThemPhim(phim: Phim): Observable<Phim> {
+    const url = 'http://svcy2.myclass.vn/api/QuanLyPhim/ThemPhimMoi';
+    return this.http.post<Phim>(url, phim,
+      {
+        headers: { 'Content-Type': 'application/json;charset=UTF-8' }
+      });
+  }
+  public uploadFile(file: File, TenPhim: string) {
+    const url = 'http://svcy2.myclass.vn/api/QuanLyPhim/UploadFile';
+    const formData = new FormData();
+    formData.append('Files', file);
+    formData.append('TenPhim', TenPhim);
+    return this.http.post(url, formData);
+  }
+
+  public XoaPhim(maPhim: number): Observable<{}> {
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`;
+    return this.http.delete(url);
+  }
+
+  public CapNhatPhim(phim: Phim): Observable<Phim> {
+    const url = 'http://svcy2.myclass.vn/api/QuanLyPhim/CapNhatPhim';
+    return this.http.post<Phim>(url, phim,
+      {
+        headers: { 'Content-Type': 'application/json;charset=UTF-8' }
+      });
+  }
 }
