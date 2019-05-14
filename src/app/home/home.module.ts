@@ -22,6 +22,8 @@ import { NoiDungComponent } from './noi-dung/noi-dung.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { UngDungComponent } from './ung-dung/ung-dung.component';
+import { PipeModule } from '../share/pipe/pipe.module';
+
 
 
 
@@ -51,7 +53,7 @@ import { UngDungComponent } from './ung-dung/ung-dung.component';
     CommonModule,
     LayoutModule,
     HomeRoutingModule,
-
+    PipeModule
   ],
   exports: [
     LayoutHomeComponent,

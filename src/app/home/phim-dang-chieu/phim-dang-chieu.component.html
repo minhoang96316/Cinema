@@ -1,9 +1,21 @@
 <div class="owl-carousel owl-theme">
   
   <div class="item" *ngFor="let phim of DanhSachPhimDangChieu">
-    <app-item-phim [Itemphim]=phim>
+    <app-item-phim [Itemphim]=phim  (evtTrailer)="showContent($event)">
     </app-item-phim>
   </div>
   
+  
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      <iframe width="498" height="353" [src]="contentModal | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 </div>

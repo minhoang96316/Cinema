@@ -4,9 +4,13 @@
 
     </div>
     <p *ngIf="isShowName">{{Itemphim.TenPhim}}</p>
-    <button  *ngIf="isShowButton" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Đặt Vé</button> 
-    <div class="movie_play_button" >
-            <i class="fa fa-play"></i>
-    </div>
+    <button class="btn" *ngIf="isShowButton" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Đặt Vé</button> 
+    <!-- <div class="movie_play_button" >
+            
+    </div> -->
     
+<button class="movie_play_button" data-toggle="modal" data-target="#modelId" (click)="emitTrailer()">
+  <i class="fa fa-play"></i>
+</button>
+
 </div>

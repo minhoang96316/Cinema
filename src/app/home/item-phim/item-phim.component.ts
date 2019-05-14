@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Phim } from 'src/app/share/model/Phim';
 
 @Component({
@@ -8,8 +8,10 @@ import { Phim } from 'src/app/share/model/Phim';
 })
 export class ItemPhimComponent implements OnInit {
   @Input() Itemphim: Phim;
+  @Output() evtTrailer = new EventEmitter();
   isShowButton = false;
   isShowName = true;
+  TrailerPhim: any;
   showButton(): boolean {
     if (typeof this.Itemphim.MaPhim === 'number') {
       return this.isShowButton = true;
@@ -21,6 +23,12 @@ export class ItemPhimComponent implements OnInit {
       return this.isShowName = false;
     }
     return this.isShowName = true;
+  }
+  emitTrailer() {
+    let trailer: any = this.Itemphim.Trailer;
+    trailer = trailer.split('watch?v=');
+    this.TrailerPhim = trailer[0] + 'embed/' + trailer[1];
+    this.evtTrailer.emit(this.TrailerPhim);
   }
 
   constructor() { }

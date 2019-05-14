@@ -16,10 +16,16 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
 
   constructor(private phim: PhimService) { }
 
+  contentModal = '';
+  showContent(trailer: string) {
+    this.contentModal = trailer;
+  }
+
   ngOnInit() {
     this.phim.LayDanhSachPhim().subscribe(
       result => {
         this.DanhSachPhimDangChieu = result;
+        console.log(result);
       },
       error => { console.log(error); },
     );

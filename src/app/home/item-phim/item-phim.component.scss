@@ -11,7 +11,7 @@
     font-size:18px;
     margin:15px;
 }
-button{
+.btn{
     background-color:#fa5238;
     border:none;
     padding:10px 20px;
@@ -23,22 +23,24 @@ button{
     margin-top:10px;
 }
 
-.movie__item:hover button{
+.movie__item:hover .btn{
     display: block;
 }
 .movie_play_button{
     position: absolute;
     top: 33%;
     left: 32%;
-    display: none;
-   
+    display: none;  
+    background-color: transparent;
+    outline: none;
 }
 .movie__item:hover .movie_play_button{
     display: block;
+    padding: 0;
+    border: none;
 }    
 .movie_play_button:hover i{
     box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.5);
-    ;
 }
 .movie_play_button i{
     font-size: 30px;
