@@ -16,9 +16,9 @@ export class NguoiDungService {
       headers: { 'Content-Type': 'application/json;charset=UTF-8' }
     });
   }
-  public DangNhap(nguoiDung: NguoiDung): Observable<NguoiDung> {
+  public DangNhap(nguoiDung: any): Observable<any> {
     const url = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=${nguoiDung.TaiKhoan}&matkhau=${nguoiDung.MatKhau}`;
-    return this.http.post<NguoiDung>(url, nguoiDung, {
+    return this.http.post(url, nguoiDung, {
       headers: { 'Content-Type': 'application/json;charset=UTF-8' }
     });
   }
