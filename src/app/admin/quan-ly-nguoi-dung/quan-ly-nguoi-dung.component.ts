@@ -14,7 +14,7 @@ declare var $: any;
     styleUrls: ['./quan-ly-nguoi-dung.component.scss']
 })
 export class QuanLyNguoiDungComponent implements OnInit {
-    @ViewChild('formAdd') formAdd: NgForm;
+    @ViewChild('FormEdit') FormEdit: NgForm;
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -58,6 +58,33 @@ export class QuanLyNguoiDungComponent implements OnInit {
             );
     }
 
+    setUser(nguoiDung: NguoiDung): void {
+        const nguoiDungEdit = {
+            TaiKhoan: nguoiDung.TaiKhoan,
+            MatKhau: nguoiDung.MatKhau,
+            HoTen: nguoiDung.HoTen,
+            Email: nguoiDung.Email,
+            SoDT: nguoiDung.SoDT,
+            MaNhom: 'GP09',
+            MaLoaiNguoiDung: nguoiDung.MaLoaiNguoiDung,
+        };
+        this.FormEdit.setValue(nguoiDungEdit);
+    }
+
+    handleEdit(nguoiDung: NguoiDung) {
+        this.nguoiDungService.CapNhatNguoiDung(nguoiDung).subscribe(
+            (res) => {
+                console.log(res); this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
+                    (result) => {
+                        this.danhSachNguoiDung.data = result;
+                        console.log(this.danhSachNguoiDung);
+                        $('#modelEdit').modal('hide');
+                    }, (error) => { console.log(error); }
+                );
+            },
+            (err) => { console.log(err); }
+        );
+    }
     ngOnInit() {
         this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
             (result) => {

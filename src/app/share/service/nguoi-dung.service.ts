@@ -28,7 +28,7 @@ export class NguoiDungService {
     return this.http.get<NguoiDung[]>(url);
   }
 
-  public ThemNguoiDung(nguoiDung: NguoiDung): Observable<NguoiDung> {
+  public CapNhatNguoiDung(nguoiDung: NguoiDung): Observable<NguoiDung> {
     const url = 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/CapNhatThongTin';
     return this.http.post<NguoiDung>(url, nguoiDung, {
       headers: {
@@ -46,4 +46,5 @@ export class NguoiDungService {
     const url = 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/LayDanhSachLoaiNguoiDung';
     return this.http.get(url);
   }
+
 }
