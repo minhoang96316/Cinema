@@ -37,7 +37,6 @@ export class NavbarComponent implements OnInit {
   }
 
   handleSignup(nguoiDung: NguoiDung) {
-    nguoiDung.MaNhom = 'GP09';
     this.nguoiDungService.DangKy(nguoiDung)
       .subscribe(
         (res) => {

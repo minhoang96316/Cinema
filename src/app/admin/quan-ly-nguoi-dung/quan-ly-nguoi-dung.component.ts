@@ -4,36 +4,73 @@ import { MatPaginator } from '@angular/material/paginator';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { NguoiDungService } from 'src/app/share/service/nguoi-dung.service';
+import { NguoiDung } from 'src/app/share/model/nguoi-dung';
+import { $ } from 'jquery';
+declare var $: any;
 
 @Component({
-  selector: 'app-quan-ly-nguoi-dung',
-  templateUrl: './quan-ly-nguoi-dung.component.html',
-  styleUrls: ['./quan-ly-nguoi-dung.component.scss']
+    selector: 'app-quan-ly-nguoi-dung',
+    templateUrl: './quan-ly-nguoi-dung.component.html',
+    styleUrls: ['./quan-ly-nguoi-dung.component.scss']
 })
 export class QuanLyNguoiDungComponent implements OnInit {
-  @ViewChild('formAdd') formAdd: NgForm;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild('formAdd') formAdd: NgForm;
+    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  danhSachNguoiDung = new MatTableDataSource();
+    danhSachNguoiDung = new MatTableDataSource();
 
 
-  constructor(private nguoiDungService: NguoiDungService) { }
-  displayedColumns: string[] = ['TaiKhoan', 'MatKhau', 'HoTen', 'Email', 'SoDT', 'MaNhom', 'MaLoaiNguoiDung'];
+    constructor(private nguoiDungService: NguoiDungService) { }
+    displayedColumns: string[] = ['TaiKhoan', 'MatKhau', 'HoTen', 'Email', 'SoDT', 'MaNhom', 'MaLoaiNguoiDung', 'Action'];
 
-  ngOnInit() {
-    this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
-      (result) => {
-        this.danhSachNguoiDung.data = result;
-        console.log(this.danhSachNguoiDung);
-      }, (error) => { console.log(error); }
-    );
-    this.danhSachNguoiDung.sort = this.sort;
-    this.danhSachNguoiDung.paginator = this.paginator;
-  }
+    XoaNguoiDung(nguoiDung: NguoiDung) {
+        this.nguoiDungService.XoaNguoiDung(nguoiDung).subscribe(
+            (res) => {
+                console.log(res);
+                this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
+                    (result) => {
+                        this.danhSachNguoiDung.data = result;
+                        console.log(this.danhSachNguoiDung);
+                    }, (error) => { console.log(error); }
+                );
+            },
+            (err) => { console.log(err); }
+        );
+    }
 
-  applyFilter(filterValue: string) {
-    this.danhSachNguoiDung.filter = filterValue.trim().toLowerCase();
-  }
+    handleSignup(nguoiDung: NguoiDung) {
+        this.nguoiDungService.DangKy(nguoiDung)
+            .subscribe(
+                (res) => {
+                    console.log(res);
+                    this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
+                        (result) => {
+                            this.danhSachNguoiDung.data = result;
+                            console.log(this.danhSachNguoiDung);
+                        }, (error) => { console.log(error); }
+                    );
+                    $('#modelId').modal('hide');
+                },
+                (err) => {
+                    console.log(err);
+                }
+            );
+    }
+
+    ngOnInit() {
+        this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
+            (result) => {
+                this.danhSachNguoiDung.data = result;
+                console.log(this.danhSachNguoiDung);
+            }, (error) => { console.log(error); }
+        );
+        this.danhSachNguoiDung.sort = this.sort;
+        this.danhSachNguoiDung.paginator = this.paginator;
+    }
+
+    applyFilter(filterValue: string) {
+        this.danhSachNguoiDung.filter = filterValue.trim().toLowerCase();
+    }
 
 }

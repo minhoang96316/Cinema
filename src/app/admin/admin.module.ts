@@ -8,13 +8,15 @@ import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModuleModule } from '../share/material-module/material-module.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MaterialModuleModule
+    MaterialModuleModule,
+    FormsModule
   ],
   exports: [
     DangnhapComponent, DangkyComponent, LayoutAdminComponent

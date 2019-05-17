@@ -1,36 +1,63 @@
-<!-- <table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th>Tên Người Dùng</th>
-      <th>Mật Khẩu</th>
-      <th>Email</th>
-      <th>Số Điện Thoại</th>
-      <th>Công Năng</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>john@example.com</td>
-      <td>0122131331</td>
-      <td>
-        <button class="btn btn-primary">Sửa</button>
-        <button class="btn btn-success">Xóa</button>
-      </td>
-    </tr>
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@example.com</td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@example.com</td>
-    </tr>
-  </tbody>
-</table> -->
+<button mat-raised-button data-toggle="modal" data-target="#modelId">Thêm người dùng</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thêm người dùng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #signupForm="ngForm" (ngSubmit)="handleSignup(signupForm.value)">
+          <div class="form-group">
+            <label for="">Tài Khoản</label>
+            <input type="text" name="TaiKhoan" ngModel class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Mật Khẩu</label>
+            <input type="text" name="MatKhau" ngModel class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="">Họ Tên: </label>
+            <input type="text" name="HoTen" ngModel class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" name="Email" ngModel class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Số ĐT</label>
+            <input type="text" name="SoDT" ngModel class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Mã nhóm</label>
+            <select class="form-control" name="MaNhom" id="" ngModel>
+              <option>GP01</option>
+              <option>GP02</option>
+              <option>GP09</option>
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Loại Người Dùng: </label>
+            <input type="radio" name="MaLoaiNguoiDung" ngModel value="QuanTri">Quản trị viên
+            <input type="radio" name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách Hàng
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-success">Thêm người dùng</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="container">
 
@@ -43,7 +70,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Tài Khoản </th>
       <td mat-cell *matCellDef="let element"> {{element.TaiKhoan}} </td>
     </ng-container>
-    
+
     <ng-container matColumnDef="MatKhau">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Mật Khẩu </th>
       <td mat-cell *matCellDef="let element"> {{element.MatKhau}} </td>
@@ -76,9 +103,16 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã loại người dùng </th>
       <td mat-cell *matCellDef="let element"> {{element.MaLoaiNguoiDung}} </td>
     </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary">Sửa</button>
+        <button mat-raised-button (click)="XoaNguoiDung(element)" color="warn">Xóa</button>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[2, 10, 20, 25,30 ,35]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5,10, 20, 25,30 ,35]" showFirstLastButtons></mat-paginator>
 </div>
