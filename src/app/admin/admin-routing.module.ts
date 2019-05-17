@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LayoutAdminComponent } from './layout-admin.component';
 
-const adminRoutes: Routes = [
-
+const adminRoutes: Routes = [{
+  path: '', component: LayoutAdminComponent
+}
 ];
 
 @NgModule({

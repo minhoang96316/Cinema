@@ -7,12 +7,14 @@ import { ThongKeComponent } from './thong-ke/thong-ke.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { MaterialModuleModule } from '../share/material-module/material-module.module';
 
 @NgModule({
   declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MaterialModuleModule
   ],
   exports: [
     DangnhapComponent, DangkyComponent, LayoutAdminComponent

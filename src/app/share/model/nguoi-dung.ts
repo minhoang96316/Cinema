@@ -3,6 +3,6 @@ export class NguoiDung {
     MatKhau: string;
     Email: string;
     SoDT: string;
-    MaNhom: string;
+    MaNhom: 'GP09';
     MaLoaiNguoiDung: string;
 }
