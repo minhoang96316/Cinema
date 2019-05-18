@@ -9,6 +9,7 @@ import { DangkyComponent } from './dangky/dangky.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModuleModule } from '../share/material-module/material-module.module';
 import { FormsModule } from '@angular/forms';
+import { PipeModule } from '../share/pipe/pipe.module';
 
 @NgModule({
   declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent],
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AdminRoutingModule,
     MaterialModuleModule,
-    FormsModule
+    FormsModule,
+    PipeModule
   ],
   exports: [
     DangnhapComponent, DangkyComponent, LayoutAdminComponent

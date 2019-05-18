@@ -162,7 +162,7 @@
       <td mat-cell *matCellDef="let element"> {{element.MaLoaiNguoiDung}} </td>
     </ng-container>
     <ng-container matColumnDef="Action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="pl-5">Action </th>
       <td mat-cell *matCellDef="let element">
         <button mat-raised-button color="primary" (click)="setUser(element)"  data-toggle="modal" data-target="#modelEdit">Sửa</button>
         <button mat-raised-button (click)="XoaNguoiDung(element)" color="warn">Xóa</button>
