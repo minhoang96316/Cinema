@@ -14,7 +14,6 @@
       </div>
       <div class="modal-body">
         <form #formAddMovie="ngForm" (ngSubmit)="handleAddMovie(formAddMovie.value,hinhAnh.files)">
-          <h4 class="display-4">Thêm Phim </h4>
           <div class="form-group">
             <label for="">Tên Phim: </label>
             <input type="text" name="TenPhim" ngModel class="form-control">
@@ -53,7 +52,67 @@
 </div>
 
 
+<!-- Edit-Film -->
 
+<!-- Modal -->
+<div class="modal fade" id="modelEditFilm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #formEditMovie="ngForm"  (ngSubmit)="handleEditMovie(formEditMovie.value)" >
+          
+          <div class="form-group">
+            <label for="">Mã Phim: </label>
+            <input type="text" name="MaPhim" ngModel class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Tên Phim: </label>
+            <input type="text" name="TenPhim" ngModel class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Trailer: </label>
+            <input type="text" name="Trailer" ngModel class="form-control">
+          </div>
+          <!-- <div class="form-group">
+            <label for="">Hình Ảnh: </label>
+            <input type="file" #hinhAnh>
+          </div> -->
+<!-- 
+          <div class="form-group">
+            <label for="">Hình Ảnh: </label>
+            <input type="text" name="HinhAnh" ngModel class="form-control">
+          </div> -->
+          <div class="form-group">
+            <label for="">Mô Tả: </label>
+            <input type="text" name="MoTa" ngModel class="form-control">
+          </div>
+          <!-- <div class="form-group">
+                    <label for="">Mã Nhóm: </label>
+                    <input type="text" name="MaNhom" ngModel class="form-control">
+                  </div> -->
+          <div class="form-group">
+            <label for="">Ngày Khởi Chiếu: </label>
+            <input type="text" name="NgayKhoiChieu" ngModel class="form-control">
+          </div>
+          <!-- <div class="form-group">
+                    <label for="">Đánh Giá: </label>
+                    <input type="text" name="DanhGia" ngModel class="form-control">
+                  </div> -->
+          <div class="form-group">
+            <button class="btn btn-success" type="submit">Đăng Ký</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -112,8 +171,7 @@
     <ng-container matColumnDef="Action">
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="pl-5" class="text-center">Action </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button color="primary" (click)="setPhim(element)" data-toggle="modal"
-          data-target="#modelEdit">Sửa</button>
+        <button mat-raised-button color="primary" data-toggle="modal" data-target="#modelEditFilm" (click)="setPhim(element)">Sửa</button>
         <button mat-raised-button (click)="XoaPhim(element)" color="warn">Xóa</button>
       </td>
     </ng-container>

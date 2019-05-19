@@ -14,7 +14,7 @@ export class NoiDungComponent implements OnInit {
   constructor(private chiTietPhim: PhimService, private route: ActivatedRoute) { }
   LayThongTinPhim(maPhim) {
     this.chiTietPhim.LayChiTietPhim(maPhim)
-      .subscribe((result: Phim) => { this.phim = result; this.isShowContent = true; },
+      .subscribe((result: Phim) => { this.phim = result; this.isShowContent = true; console.log(result); },
         (error) => { console.log(error); });
   }
   ngOnInit() {

@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PhimService } from 'src/app/share/service/phim.service';
 
 import { $ } from 'jquery';
+import { ParseSourceFile } from '@angular/compiler';
 
 declare var $: any;
 @Component({
@@ -14,7 +15,7 @@ declare var $: any;
   styleUrls: ['./quan-ly-phim.component.scss']
 })
 export class QuanLyPhimComponent implements OnInit {
-  // @ViewChild('FormEdit') FormEdit: NgForm;
+  @ViewChild('formEditMovie') formEditMovie: NgForm;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -59,6 +60,19 @@ export class QuanLyPhimComponent implements OnInit {
       );
   }
 
+
+  handleEditMovie(movie: any) {
+    movie.MaNhom = 'GP09';
+    movie.DanhGia = '0';
+    this.phimService.CapNhatPhim(movie).subscribe(
+      (res) => {
+        this.phimService.LayDanhSachPhim().subscribe(
+          (data) => { this.danhSachPhim.data = data; }
+        );
+      }
+    );
+  }
+
   XoaPhim(Phim: any) {
     this.phimService.XoaPhim(Phim.MaPhim).subscribe(
       (res) => {
@@ -73,4 +87,17 @@ export class QuanLyPhimComponent implements OnInit {
     );
   }
 
+
+  setPhim(Phim: any): void {
+    const PhimEdit = {
+      MaPhim: Phim.MaPhim,
+      TenPhim: Phim.TenPhim,
+      MoTa: Phim.MoTa,
+      Trailer: Phim.Trailer,
+      //HinhAnh: Phim.HinhAnh,
+      NgayKhoiChieu: Phim.NgayKhoiChieu
+    };
+    this.formEditMovie.setValue(PhimEdit);
+    console.log(Phim.NgayKhoiChieu);
+  }
 }

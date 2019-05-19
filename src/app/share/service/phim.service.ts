@@ -48,4 +48,9 @@ export class PhimService {
         headers: { 'Content-Type': 'application/json;charset=UTF-8' }
       });
   }
+
+  public LayChiTietPhongVe(phim: any): Observable<any> {
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?${phim.MaLichChieu}`;
+    return this.http.get(url);
+  }
 }
