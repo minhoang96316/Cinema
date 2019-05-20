@@ -23,6 +23,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { UngDungComponent } from './ung-dung/ung-dung.component';
 import { PipeModule } from '../share/pipe/pipe.module';
+import { TrangDatVeComponent } from './trang-dat-ve/trang-dat-ve.component';
+import { GheComponent } from './ghe/ghe.component';
+import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
 
 
 
@@ -48,7 +51,10 @@ import { PipeModule } from '../share/pipe/pipe.module';
     LichChieuComponent,
     NoiDungComponent,
     TrangChuComponent,
-    UngDungComponent],
+    UngDungComponent,
+    TrangDatVeComponent,
+    GheComponent,
+    DanhSachGheComponent],
   imports: [
     CommonModule,
     LayoutModule,

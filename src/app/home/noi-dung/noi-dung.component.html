@@ -1,15 +1,19 @@
 <div class=" myDetail">
 
   <div class="row" *ngIf="isShowContent">
-    <div class=" detail_img" >
+    <div class=" detail_img">
       <img src={{phim.HinhAnh}} alt="">
     </div>
-    <div class="col-8 detail_content" >
+    <div class="col-8 detail_content">
       <span>{{phim.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</span>
       <h1>{{phim.TenPhim}}</h1>
       <p>{{phim.MoTa}}</p>
       <button class="btn btn-danger">Mua Vé</button>
     </div>
   </div>
-
+  <br />
+  <button class="btn btn-outline-success mr-2" [routerLink]="['/home/trang-dat-ve',lichchieu.MaLichChieu]"
+    *ngFor="let lichchieu of phim.LichChieu">
+    {{lichchieu.NgayChieuGioChieu| date:'dd/MM'}}
+  </button>
 </div>

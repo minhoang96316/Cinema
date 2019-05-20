@@ -3,13 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutHomeComponent } from './layout-home.component';
 import { TrangChiTietComponent } from './trang-chi-tiet/trang-chi-tiet.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
+import { TrangDatVeComponent } from './trang-dat-ve/trang-dat-ve.component';
 
 const homeRoutes: Routes = [
   {
     path: '', component: LayoutHomeComponent, children: [
-      {path: '', component: TrangChuComponent},
+      { path: '', component: TrangChuComponent },
       { path: 'trang-chu', component: TrangChuComponent },
-      { path: 'trang-chi-tiet/:maPhim', component: TrangChiTietComponent }]
+      { path: 'trang-chi-tiet/:maPhim', component: TrangChiTietComponent },
+      { path: 'trang-dat-ve/:maLichChieu', component: TrangDatVeComponent }
+    ]
   },
 
 ];

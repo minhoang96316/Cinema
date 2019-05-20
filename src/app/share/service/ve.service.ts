@@ -25,4 +25,10 @@ export class VeService {
         headers: { 'Content-Type': 'application/json;charset=UTF-8' }
       });
   }
+
+  public LayChiTietPhongVe(MaLichChieu: any): Observable<any> {
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${MaLichChieu}`;
+    return this.http.get(url);
+  }
+
 }

@@ -49,8 +49,8 @@ export class PhimService {
       });
   }
 
-  public LayChiTietPhongVe(phim: any): Observable<any> {
-    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?${phim.MaLichChieu}`;
+  public LayChiTietPhongVe(MaLichChieu: any): Observable<any> {
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${MaLichChieu}`;
     return this.http.get(url);
   }
 }
