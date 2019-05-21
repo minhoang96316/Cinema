@@ -10,9 +10,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModuleModule } from '../share/material-module/material-module.module';
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from '../share/pipe/pipe.module';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
 
 @NgModule({
-  declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent],
+  declarations: [LayoutAdminComponent, QuanLyPhimComponent, QuanLyNguoiDungComponent, ThongKeComponent, DangnhapComponent, DangkyComponent, HeaderAdminComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

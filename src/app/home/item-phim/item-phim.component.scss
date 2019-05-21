@@ -1,5 +1,4 @@
 .movie__item{
-   cursor: pointer;
    position: relative;
 }
 .movie__item img{
@@ -10,6 +9,10 @@
 .movie__item p{
     font-size:18px;
     margin:15px;
+    font-weight: bold;
+}
+.btn_booked {
+    
 }
 .btn{
     background-color:#fa5238;
@@ -33,6 +36,7 @@
     display: none;  
     background-color: transparent;
     outline: none;
+    
 }
 .movie__item:hover .movie_play_button{
     display: block;
