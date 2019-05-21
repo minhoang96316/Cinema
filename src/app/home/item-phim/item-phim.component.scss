@@ -57,8 +57,10 @@
     left: 0;
     background-color: black;
     display: none;
+    border-radius: 5%;
 }
 .movie__item:hover .background{
     display: block;
     opacity: .3;
+    
 }    

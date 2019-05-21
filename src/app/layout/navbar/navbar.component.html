@@ -19,65 +19,58 @@
 
   </a> -->
   <!-- Button trigger modal -->
-  <button *ngIf= "isShowDN" type="button" class="btn" data-toggle="modal" data-target="#modelDangNhap">
+  <button *ngIf= "isShowDN" type="button" class="login_button" data-toggle="modal" data-target="#modelDangNhap">
     <i class="fa fa-user-circle"></i>
     <span>Đăng nhập</span>
   </button>
-  <button *ngIf= "isShowDX"type="button" class="btn btn-primary" (click)="signOut()">
+  <button *ngIf= "isShowDX"type="button" class="login_button" (click)="signOut()">
     <i class="fa fa-sign-out"></i>
     <span>Đăng xuất</span>
   </button>
-</header>
+</header> 
   <!-- Modal -->
   <div class="modal fade" id="modelDangNhap" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content ">
             <div class="modal-header">
                 <h5 class="modal-title">{{ ModalTitile }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body box">
                 <form *ngIf= "isShowFormDN" #formDN ="ngForm" (ngSubmit)= "handleSignin(formDN.value)" >
                     <div class="form-group">
-                      <label for="">Tài Khoản</label>
-                      <input type="text" name="TaiKhoan" ngModel class="form-control" >
+                      <input type="text" name="TaiKhoan"  placeholder="Tài Khoản" ngModel class="form-control" >
                     </div>
                     <div class="form-group">
-                      <label for="">Mật Khẩu</label>
-                      <input type="text" name="MatKhau" ngModel class="form-control">
+                      <input type="text" name="MatKhau" placeholder="Mật Khẩu" ngModel class="form-control">
                     </div>
                     <div class="form-group text-center">
-                      <button type="submit" class="btn btn-success">Đăng nhập</button>
-                      <button type="button" class="btn btn-primary ml-2" (click)="showFormDK()">Đăng Ký</button>
+                      <button type="submit" class="btn btn_btn">Đăng nhập</button>
+                      <button type="button" class="btn btn_btn ml-2" (click)="showFormDK()">Đăng Ký</button>
                     </div>
                   </form>
 
                   <form *ngIf= "isShowFormDK" #signupForm = "ngForm" (ngSubmit)="handleSignup(signupForm.value)">
                     <div class="form-group">
-                      <label for="">Tài Khoản</label>
-                      <input type="text" name="TaiKhoan" ngModel class="form-control">
+                      <input type="text" name="TaiKhoan" placeholder="Tài Khoản" ngModel class="form-control">
                     </div>
                     <div class="form-group">
-                      <label for="">Mật Khẩu</label>
-                      <input type="text" name="MatKhau" ngModel class="form-control">
+                      <input type="text" name="MatKhau" placeholder="Mật Khẩu" ngModel class="form-control">
             
                     </div>
                     <div class="form-group">
-                      <label for="">Họ Tên: </label>
-                      <input type="text" name="HoTen" ngModel class="form-control" >
+                      <input type="text" name="HoTen" placeholder="Họ Tên" ngModel class="form-control" >
 
                     </div>
                     <div class="form-group">
-                      <label for="">Email</label>
-                      <input type="email" name="Email" ngModel  class="form-control" >
+                      <input type="email" name="Email" placeholder="Email" ngModel  class="form-control" >
                     </div>
                     <div class="form-group">
-                      <label for="">Số ĐT</label>
-                      <input type="text" name="SoDT" ngModel class="form-control">
+                      <input type="text" name="SoDT" placeholder="SĐT" ngModel class="form-control">
                     </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group form_select" style="text-align:center">
                     <label for="">Mã nhóm</label>
                     <select class="form-control" name="MaNhom" id="" ngModel>
                       <option>GP01</option>
@@ -90,10 +83,10 @@
                       <label for="">Loại Người Dùng: </label>
                       <input type="radio" name="MaLoaiNguoiDung" ngModel value="QuanTri">Quản trị viên
                       <input type="radio" name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách Hàng
-                    </div>
+                    </div> -->
                     <div class="form-group text-center">
-                      <button type="submit" class="btn btn-success">Đăng Ký</button>
-                      <button type="button" class="btn btn-primary ml-2" (click)="showFormDN()">Đăng nhập</button>
+                      <button type="submit" class="btn btn_btn">Đăng Ký</button>
+                      <button type="button" class="btn btn_btn ml-2" (click)="showFormDN()">Đăng nhập</button>
                     </div>
                   </form>
             </div>

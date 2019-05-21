@@ -1,3 +1,4 @@
+//Navbar
 #header{
     display: flex;
     justify-content: space-between;
@@ -26,17 +27,102 @@
     margin:0 10px;
 }
 .header__menu ul li a{
-    color:black;
-    text-decoration: none;
-}
-.signin{
-    color:#999;
-    text-decoration: none;
     font-size: 18px;
-    display: flex;
-    align-items: center;
+    color: black;
+    
+    text-decoration: none;
 }
-.signin i {
-    font-size:30px;
-    margin-right:10px;
+.header__menu ul li:hover a {
+    color:#FB4226;
+    transition: all 0.5s;
 }
+.login_button{
+    padding: 10px 20px;
+    background-color: unset;
+    border: unset;
+    color: black;
+    font-size: 20px;
+}
+.login_button:hover{
+    color: #FB4226;
+    transition:  all 0.5s;
+}
+.login_button:hover i{  
+    color: #FB4226;
+    transition:  all 0.5s;
+}
+.login_button:focus{
+    outline: unset;
+}
+.login_button i{
+    margin-top: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: black;
+}
+.logout_button{
+
+}
+//Login Model
+.modal{
+    background-color: rgba(0,0,0,0.2);
+}
+.modal-header{
+    border: unset;
+    
+}
+.modal-header h5{
+    margin-left: 170px;
+    font-size: 25px;
+    color: rgb(107, 105, 105)
+    
+}
+.modal-header button{
+   
+    font-size: 25px;
+    
+}
+.box input{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 30px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+  .box input:focus{
+    width: 280px;
+    border-color: #2ecc71;
+    box-shadow: unset;
+  }
+  .box button{
+    background: none;
+    border: 2px solid #2ecc71;
+    outline: none;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+  .btn_btn{
+      width: 140px;
+  }
+  .form_select{
+    margin: 0 auto;
+    width: 300px;
+    padding: 0;
+  }
+  .form_select select{
+    border: 2px solid #3498db;
+    border-radius: 24px;
+
+  }
+  .form_select select option{
+    border: unset;
+    
+
+  }
