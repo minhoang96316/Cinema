@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     background-color: #e0a9d0;
+    height: 555px;
     
 }
 .menu_nav{
@@ -43,6 +44,9 @@
 //menu_content
 .menu_content_item{
     padding: 50px ;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     
 }
 
@@ -194,4 +198,26 @@
 }
 .agileits-w3layouts-stats{
     margin-top: 50px;
+}
+//scroll bar
+.scrollbar {
+    background-color: #F5F5F5;
+    float: left;
+    height: 300px;
+    margin-bottom: 25px;
+    margin-left: 22px;
+    margin-top: 40px;
+    width: 65px;
+       overflow-y: scroll;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .4);
+    background-color: #CFCFCF
+}
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5
+}
+::-webkit-scrollbar-thumb {
+    background-color: #2C3E50
 }

@@ -1,3 +1,14 @@
 .carousel{
     margin-top:70px;
 }
+.carousel-item img{
+ height: 565px;
+}
+.carousel ul li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.carousel ul li.active{
+color: black
+}

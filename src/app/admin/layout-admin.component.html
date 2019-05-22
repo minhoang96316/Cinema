@@ -27,7 +27,7 @@
     </div>
     <div class="menu_content" [ngSwitch]="menuType">
       <div *ngSwitchCase="'DashBoard'" class="menu_content_item ">
-        <div class="row ">
+        <div class="row " style="margin-left: 100px ">
           <div class="menu_item item1">
             <div class="row">
               <div class="col-md-4 market-update-right">
@@ -67,19 +67,7 @@
             </div>
 
           </div>
-          <div class="menu_item  item4">
-            <div class="row">
-              <div class="col-md-4 market-update-right">
-                <i class="fa fa-shopping-cart"> </i>
-              </div>
-              <div class="col-md-8 market-update-left">
-                <h4>Sales</h4>
-                <h3>1,500</h3>
-                <p>Other hand, we denounce</p>
-              </div>
-            </div>
-
-          </div>
+         
         </div>
         <div class="agileits-w3layouts-stats">
           <div class="row">
@@ -188,6 +176,7 @@
       <div *ngSwitchCase="'Film'" class="menu_content_item ">
           <app-quan-ly-phim></app-quan-ly-phim>
       </div>
+     
     </div>
   </div>
 </div>
