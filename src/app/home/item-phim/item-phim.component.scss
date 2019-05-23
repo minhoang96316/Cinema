@@ -1,20 +1,39 @@
 .movie__item{
    position: relative;
 }
-.movie__item img{
-    width: 100%;
-    border-radius: 5%;
-    box-shadow: 0 0 16px 0 rgba(195, 177, 158, 0.5);
+.movie_item_img{
+    cursor: pointer;
 }
-.movie__item p{
+
+.movie_item_img:hover img{
+    width: 120%;
+}
+
+.movie_item_img .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: none;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    z-index: 4;
+    
+}
+.movie_title{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.movie_title p{
     font-size:18px;
     margin:15px;
     font-weight: bold;
 }
-.btn_booked {
-    
-}
-.btn{
+.btn_booked{
     background-color:#fa5238;
     border:none;
     padding:10px 20px;
@@ -22,27 +41,32 @@
     width: 100%;
     font-size:20px;
     border-radius: 5px;
-    display: none;
     margin-top:10px;
 }
 
-.movie__item:hover .btn{
+.btn_booked:hover{
+    background-color: white;
+    color: #fa5238;
+}
+.movie_item_img:hover .movie_play_button{
     display: block;
+}
+.movie_item_img:hover .background{
+    display: block;
+    opacity: .1;
 }
 .movie_play_button{
     position: absolute;
     top: 33%;
     left: 32%;
     display: none;  
+    border: unset;
     background-color: transparent;
     outline: none;
+    z-index: 5;
     
 }
-.movie__item:hover .movie_play_button{
-    display: block;
-    padding: 0;
-    border: none;
-}    
+  
 .movie_play_button:hover i{
     box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.5);
 }
@@ -55,16 +79,7 @@
     color: white;
     padding: 9px 15px;
 }
-.background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    display: none;
-    border-radius: 5%;
-}
-.movie__item:hover .background{
-    display: block;
-    opacity: .3;
-    
-}    
+
+ /* Zoom In #2 */
+ 
+

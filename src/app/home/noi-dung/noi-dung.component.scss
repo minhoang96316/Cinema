@@ -1,17 +1,27 @@
-.film_detail{
-}
-
-h1{
-    
-    color: white;
-    font-size: 30px;
-}
 .myDetail{
-    margin-bottom: 50px;
+    position: relative;
+}
+//detail_background
+.detail_background{
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    width: 100%;
+    bottom: -150px;
+    
+}
+.bgr_img img{
+    width: 100%;
+    filter: blur(10px);
+    
+}
+//detail_content
+.detail_detail{
+    padding: 100px 0;
     width: 60%;
     margin: 0 auto;
-    
-}
+} 
+
 .detail_img{
     height: 318px;
     width: 214px;
@@ -20,7 +30,12 @@ h1{
     margin-top: 50px;
     
 }
-img{
+.detail_content h1{
+    
+    color: white;
+    font-size: 30px;
+}
+.detail_detail img{
     
     box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.5);
     border-radius: 5%;
@@ -46,5 +61,17 @@ button{
     padding: 20px auto;
 }
 span{
+
     color: white;
+}
+.button_booking{
+    width: 60%;
+    margin: 0 auto;
+}
+//button_booking
+.button_booking button{
+ color: green;
+ font-size: 20px;
+ border: 1px solid green;
+ background: white;
 }

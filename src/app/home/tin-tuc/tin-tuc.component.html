@@ -1,9 +1,9 @@
 <div class="row" style="margin-bottom:50px">
   <div class="col-12 text-center content">
     <ul [ngSwitch]="loaiTin"> 
-      <li class="mr-4 " [ngStyle]="{'color':loaiTin === 'DienAnh'? '#FB4226': 'black'}" (click)="ChonLoaiTin('DienAnh')"><span>Điện Ảnh</span></li>
-      <li class="mr-4" [ngStyle]="{'color':loaiTin === 'Review'? '#FB4226': 'black'}" (click)="ChonLoaiTin('Review')"><span>Review</span></li>
-      <li class="" [ngStyle]="{'color':loaiTin === 'KhuyenMai'? '#FB4226': 'black'}" (click)="ChonLoaiTin('KhuyenMai')"><span>Khuyến Mãi</span></li>
+      <li class="mr-4 " [ngStyle]="{'color':loaiTin === 'DienAnh'? '#FB4226': 'white'}" (click)="ChonLoaiTin('DienAnh')"><span>ĐIỆN ẢNH</span></li>
+      <li class="mr-4" [ngStyle]="{'color':loaiTin === 'Review'? '#FB4226': 'white'}" (click)="ChonLoaiTin('Review')"><span>REVIEW</span></li>
+      <li class="" [ngStyle]="{'color':loaiTin === 'KhuyenMai'? '#FB4226': 'white'}" (click)="ChonLoaiTin('KhuyenMai')"><span>KHUYẾN MÃI</span></li>
     </ul>
     
     <!-- <button class="btn btn-success mr-2 " (click)="ChonLoaiTin('DienAnh')">Dien Anh</button>

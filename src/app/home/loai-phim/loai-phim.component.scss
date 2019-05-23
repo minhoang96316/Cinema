@@ -1,3 +1,6 @@
+.myFilmList{
+    padding: 50px 0;
+}
 ul{
     display: inline-flex;
 }
@@ -8,11 +11,13 @@ li{
     text-decoration: unset;
     list-style: none;
     
+    
 }
 li span{
     cursor: pointer;
     color: black;
     text-decoration: none;
+    color: white;
 }
 li span:hover{
     font-size: 30px;

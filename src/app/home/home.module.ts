@@ -29,7 +29,6 @@ import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
 
 
 
-
 @NgModule({
   declarations: [
     LayoutHomeComponent,
@@ -54,7 +53,8 @@ import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
     UngDungComponent,
     TrangDatVeComponent,
     GheComponent,
-    DanhSachGheComponent],
+    DanhSachGheComponent,
+   ],
   imports: [
     CommonModule,
     LayoutModule,

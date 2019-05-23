@@ -9,21 +9,20 @@ import { Phim } from 'src/app/share/model/Phim';
 export class ItemPhimComponent implements OnInit {
   @Input() Itemphim: Phim;
   @Output() evtTrailer = new EventEmitter();
-  isShowButton = false;
-  isShowName = true;
+  
   TrailerPhim: any;
-  showButton(): boolean {
-    if (typeof this.Itemphim.MaPhim === 'number') {
-      return this.isShowButton = true;
-    }
-    return this.isShowButton = false;
-  }
-  showName(): boolean {
-    if (this.isShowButton === true) {
-      return this.isShowName = false;
-    }
-    return this.isShowName = true;
-  }
+  // showButton(): boolean {
+  //   if (typeof this.Itemphim.MaPhim === 'number') {
+  //     return this.isShowButton = true;
+  //   }
+  //   return this.isShowButton = false;
+  // }
+  // showName(): boolean {
+  //   if (this.isShowButton === true) {
+  //     return this.isShowName = false;
+  //   }
+  //   return this.isShowName = true;
+  // }
   emitTrailer() {
     let trailer: any = this.Itemphim.Trailer;
     trailer = trailer.split('watch?v=');
@@ -34,7 +33,7 @@ export class ItemPhimComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.showButton();
+    
   }
 
 }

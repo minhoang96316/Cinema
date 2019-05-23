@@ -1,6 +1,9 @@
 .carousel{
     margin-top:70px;
 }
+.carousel-item{
+    cursor: pointer;
+}
 .carousel-item img{
  height: 565px;
 }
@@ -8,7 +11,29 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    
+    color: transparent
 }
 .carousel ul li.active{
-color: black
+    
+    background-color: #fa5238
+}
+.backgr_img{
+     display: none;
+    position: absolute;
+    top: 44%;
+    left: 48%;
+    
+}
+.backgr_img img{
+    width: 70px;
+    height: 70px;
+}
+.carousel-item:hover .backgr_img{
+    display: block
+}
+.backgr_img:hover{
+    opacity: .5;
+    transition: all .5s;
+    
 }
