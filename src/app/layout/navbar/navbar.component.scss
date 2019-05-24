@@ -82,22 +82,19 @@
     font-size: 25px;
 }
 .box input{
-    border:0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
     text-align: center;
-    border: 2px solid #3498db;
     padding: 14px 30px;
     width: 300px;
     outline: none;
-    color: white;
+    color: black;
     border-radius: 24px;
     transition: 0.25s;
   }
   .box input:focus{
     width: 280px;
-    border-color: #2ecc71;
     box-shadow: unset;
   }
   .box button{
@@ -127,6 +124,20 @@
   }
   .form_select select option{
     border: unset;
-    
-
   }
+
+.errors{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 14px 30px;
+    width: 300px;
+    transition: 0.25s;
+}
+
+input.ng-invalid{
+    border-left: 5px solid red;
+} 
+input.ng-valid{
+    border-left: 5px solid green;
+}

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NguoiDungService } from 'src/app/share/service/nguoi-dung.service';
 
 import { $ } from 'jquery';
 import { NguoiDung } from 'src/app/share/model/nguoi-dung';
+import { NgForm } from '@angular/forms';
 declare var $: any;
 @Component({
   selector: 'app-navbar',
@@ -10,9 +11,12 @@ declare var $: any;
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('formDN') formDN: NgForm;
 
   constructor(private nguoiDungService: NguoiDungService) { }
-
+  MaLoaiNguoiDung = 'KhachHang';
+  MaNhom = 'GP09';
+  MangNhom = [];
   ModalTitile = 'Đăng nhập';
   isShowFormDN = true;
   isShowFormDK = false;
@@ -27,6 +31,7 @@ export class NavbarComponent implements OnInit {
           this.isShowDN = false;
           this.isShowDX = true;
           $('#modelDangNhap').modal('hide');
+          this.formDN.resetForm();
         } else {
           this.isShowDX = false;
           this.isShowDN = true;
@@ -72,7 +77,7 @@ export class NavbarComponent implements OnInit {
       this.isShowDN = true;
       this.isShowDX = false;
     }
-    console.log(this.isShowDN, this.isShowDX);
+    this.MangNhom = ['GP01', 'GP02', 'GP03', 'GP04', 'GP05', 'GP06', 'GP07', 'GP08', 'GP09'];
   }
 
 }

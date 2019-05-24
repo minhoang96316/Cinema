@@ -17,9 +17,12 @@ export class QuanLyNguoiDungComponent implements OnInit {
     @ViewChild('FormEdit') FormEdit: NgForm;
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild('signupForm') signupForm: NgForm;
 
     danhSachNguoiDung = new MatTableDataSource();
-
+    MaLoaiNguoiDung = 'KhachHang';
+    MaNhom = 'GP09';
+    MangNhom = [];
 
     constructor(private nguoiDungService: NguoiDungService) { }
     displayedColumns: string[] = ['TaiKhoan', 'MatKhau', 'HoTen', 'Email', 'SoDT', 'MaNhom', 'MaLoaiNguoiDung', 'Action'];
@@ -50,6 +53,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
                             console.log(this.danhSachNguoiDung);
                         }, (error) => { console.log(error); }
                     );
+                    this.signupForm.resetForm();
                     $('#modalId').modal('hide');
                 },
                 (err) => {
@@ -86,6 +90,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
         );
     }
     ngOnInit() {
+        this.MangNhom = ['GP01', 'GP02', 'GP03', 'GP04', 'GP05', 'GP06', 'GP07', 'GP08', 'GP09'];
         this.nguoiDungService.LayDanhSachNguoiDung().subscribe(
             (result) => {
                 this.danhSachNguoiDung.data = result;
