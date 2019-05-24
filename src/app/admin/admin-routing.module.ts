@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutAdminComponent } from './layout-admin.component';
+import { LoginAdminGuard } from '../share/Guard/login-admin.guard';
+
 
 const adminRoutes: Routes = [{
-  path: '', component: LayoutAdminComponent
+  path: '', component: LayoutAdminComponent, canActivate: [LoginAdminGuard]
 }
 ];
 

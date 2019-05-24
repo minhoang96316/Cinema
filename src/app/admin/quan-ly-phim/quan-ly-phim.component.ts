@@ -40,9 +40,7 @@ export class QuanLyPhimComponent implements OnInit {
     movie.MaPhim = '';
     movie.MaNhom = 'GP09';
     movie.DanhGia = '0';
-    console.log(imageFiles);
     movie.HinhAnh = imageFiles[0].name;
-    console.log(movie);
     this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
       .subscribe(
         (res) => {
@@ -64,24 +62,18 @@ export class QuanLyPhimComponent implements OnInit {
   }
 
 
-  handleEditMovie(movie: any, imageFiles: FileList): void {
+  handleEditMovie(movie: any): void {
     movie.MaNhom = 'GP09';
-    movie.DanhGia = '0';
-    movie.HinhAnh = imageFiles[0].name;
-    this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
-      .subscribe(
-        (result) => {
-          this.phimService.CapNhatPhim(movie).subscribe(
-            (res) => {
-              console.log(res);
-              this.phimService.LayDanhSachPhim().subscribe(
-                (data) => { this.danhSachPhim.data = data; $('#modalEditFilm').modal('hide'); }
-              );
-            }, (err) => { console.log(err); }
-          );
-        }
-      )
+    this.phimService.CapNhatPhim(movie).subscribe(
+      (res) => {
+        console.log(res);
+        this.phimService.LayDanhSachPhim().subscribe(
+          (data) => { this.danhSachPhim.data = data; $('#modalEditFilm').modal('hide'); }
+        );
+      }, (err) => { console.log(err); }
+    );
   }
+
 
   XoaPhim(Phim: any) {
     this.phimService.XoaPhim(Phim.MaPhim).subscribe(
@@ -101,6 +93,7 @@ export class QuanLyPhimComponent implements OnInit {
   setPhim(Phim: any): void {
     const PhimEdit = {
       MaPhim: Phim.MaPhim,
+      DanhGia: Phim.DanhGia,
       TenPhim: Phim.TenPhim,
       MoTa: Phim.MoTa,
       Trailer: Phim.Trailer,

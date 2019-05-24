@@ -10,6 +10,8 @@ export class TrangChuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // let user: any = JSON.parse(localStorage.getItem('loginUser'));
+    // console.log(user.MaLoaiNguoiDung);
   }
 
 }

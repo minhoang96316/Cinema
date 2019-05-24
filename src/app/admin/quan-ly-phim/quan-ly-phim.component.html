@@ -16,18 +16,18 @@
         <form #formAddMovie="ngForm" (ngSubmit)="handleAddMovie(formAddMovie.value,hinhAnhAdd.files)">
           <div class="form-group">
             <label for="">Tên Phim: </label>
-            <input type="text" required #TenPhim="ngModel" name="TenPhim" ngModel class="form-control">
-            <div *ngIf="TenPhim.errors && (TenPhim.touched ||TenPhim.dirty)">
-              <p *ngIf="TenPhim.errors.required" class="alert alert-danger">* vui lòng nhập tên phim</p>
+            <input type="text" required #TenPhimAdd="ngModel" name="TenPhim" ngModel class="form-control">
+            <div *ngIf="TenPhimAdd.errors && (TenPhimAdd.touched ||TenPhimAdd.dirty)">
+              <p *ngIf="TenPhimAdd.errors.required" class="alert alert-danger">* vui lòng nhập tên phim</p>
             </div>
           </div>
           <div class="form-group">
             <label for="">Trailer: </label>
             <input required pattern="^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/watch\?v=([^&]+)"
-              #Trailer="ngModel" type="text" name="Trailer" ngModel class="form-control">
-            <div *ngIf="Trailer.errors && (Trailer.touched ||Trailer.dirty)">
-              <p *ngIf="Trailer.errors.required" class="alert alert-danger">* vui lòng nhập Trailer</p>
-              <p *ngIf="Trailer.errors.pattern" class="alert alert-danger">* Trailer không đúng</p>
+              #TrailerAdd="ngModel" type="text" name="Trailer" ngModel class="form-control">
+            <div *ngIf="TrailerAdd.errors && (TrailerAdd.touched ||TrailerAdd.dirty)">
+              <p *ngIf="TrailerAdd.errors.required" class="alert alert-danger">* vui lòng nhập Trailer</p>
+              <p *ngIf="TrailerAdd.errors.pattern" class="alert alert-danger">* Trailer không đúng</p>
             </div>
           </div>
           <div class="form-group">
@@ -36,9 +36,9 @@
           </div>
           <div class="form-group">
             <label for="">Mô Tả: </label>
-            <input required #MoTa="ngModel" type="text" name="MoTa" ngModel class="form-group">
-            <div *ngIf="MoTa.errors && (MoTa.touched ||MoTa.dirty)">
-              <p *ngIf="MoTa.errors.required" class="alert alert-danger">* vui lòng nhập tên phim</p>
+            <input required #MoTaAdd="ngModel" type="text" name="MoTa" ngModel class="form-group">
+            <div *ngIf="MoTaAdd.errors && (MoTaAdd.touched ||MoTaAdd.dirty)">
+              <p *ngIf="MoTaAdd.errors.required" class="alert alert-danger">* vui lòng nhập tên phim</p>
             </div>
           </div>
           <!-- <div class="form-group">
@@ -47,11 +47,11 @@
           </div> -->
           <div class="form-group">
             <label for="">Ngày Khởi Chiếu: </label>
-            <input required type="text" pattern="^((0|1)\d{1})-((0|1|2)\d{1})-((19|20)\d{2})" #NgayKhoiChieu=ngModel
+            <input required type="text" pattern="^((0|1)\d{1})-((0|1|2)\d{1})-((19|20)\d{2})" #NgayKhoiChieuAdd=ngModel
               name="NgayKhoiChieu" ngModel class="form-control">
-            <div *ngIf="NgayKhoiChieu.errors && (NgayKhoiChieu.touched ||NgayKhoiChieu.dirty)">
-              <p *ngIf="NgayKhoiChieu.errors.required" class="alert alert-danger">* vui lòng nhập Ngày khởi chiếu</p>
-              <p *ngIf="NgayKhoiChieu.errors.pattern" class="alert alert-danger">* Ngày khởi chiếu không đúng</p>
+            <div *ngIf="NgayKhoiChieuAdd.errors && (NgayKhoiChieuAdd.touched ||NgayKhoiChieuAdd.dirty)">
+              <p *ngIf="NgayKhoiChieuAdd.errors.required" class="alert alert-danger">* vui lòng nhập Ngày khởi chiếu</p>
+              <p *ngIf="NgayKhoiChieuAdd.errors.pattern" class="alert alert-danger">* Ngày khởi chiếu không đúng</p>
             </div>
           </div>
           <!-- <div class="form-group">
@@ -82,11 +82,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #formEditMovie="ngForm" (ngSubmit)="handleEditMovie(formEditMovie.value,HinhAnh.files)">
+        <form #formEditMovie="ngForm" (ngSubmit)="handleEditMovie(formEditMovie.value)">
 
-          <div class="form-group">
-            <label for="">Mã Phim: </label>
-            <input disabled type="text" name="MaPhim" ngModel class="form-control">
+          <div class="form-group hideTag">
+            <label class="hideTag" for="">Mã Phim: </label>
+            <input type="text" name="MaPhim" ngModel class="form-control hideTag">
           </div>
           <div class="form-group">
             <label for="">Tên Phim: </label>
@@ -104,11 +104,6 @@
               <p *ngIf="Trailer.errors.pattern" class="alert alert-danger">* Trailer không đúng</p>
             </div>
           </div>
-          
-          <div class="form-group">
-            <label for="">Hình Ảnh: </label>
-            <input type="file" #HinhAnh class="form-control">
-          </div>
 
           <div class="form-group">
             <label for="">Mô Tả: </label>
@@ -123,13 +118,12 @@
                   </div> -->
           <div class="form-group">
             <label for="">Ngày Khởi Chiếu: </label>
-            <input  type="text" 
-              name="NgayKhoiChieu" ngModel class="form-control">
+            <input type="text" name="NgayKhoiChieu" ngModel class="form-control">
           </div>
-          <!-- <div class="form-group">
-                    <label for="">Đánh Giá: </label>
-                    <input type="text" name="DanhGia" ngModel class="form-control">
-                  </div> -->
+          <div class="form-group hideTag">
+            <label for="" class="hideTag">Đánh Giá: </label>
+            <input class="hideTag" type="text" name="DanhGia" ngModel class="form-control">
+          </div>
           <div class="form-group">
             <button class="btn btn-success" [disabled]="formEditMovie.invalid" type="submit">Cập Nhật</button>
           </div>
