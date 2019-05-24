@@ -50,7 +50,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
                             console.log(this.danhSachNguoiDung);
                         }, (error) => { console.log(error); }
                     );
-                    $('#modelId').modal('hide');
+                    $('#modalId').modal('hide');
                 },
                 (err) => {
                     console.log(err);
@@ -78,7 +78,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
                     (result) => {
                         this.danhSachNguoiDung.data = result;
                         console.log(this.danhSachNguoiDung);
-                        $('#modelEdit').modal('hide');
+                        $('#modalEdit').modal('hide');
                     }, (error) => { console.log(error); }
                 );
             },

@@ -6,8 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PhimService } from 'src/app/share/service/phim.service';
 
 import { $ } from 'jquery';
-import { ParseSourceFile } from '@angular/compiler';
-
 declare var $: any;
 @Component({
   selector: 'app-quan-ly-phim',
@@ -41,6 +39,7 @@ export class QuanLyPhimComponent implements OnInit {
     movie.MaPhim = '';
     movie.MaNhom = 'GP09';
     movie.DanhGia = '0';
+    console.log(imageFiles);
     movie.HinhAnh = imageFiles[0].name;
     console.log(movie);
     this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
@@ -52,6 +51,8 @@ export class QuanLyPhimComponent implements OnInit {
                 this.phimService.LayDanhSachPhim().subscribe(
                   (data) => {
                     this.danhSachPhim.data = data;
+                    console.log(this.danhSachPhim.data);
+                    $('#modalAddFilm').modal('hide');
                   }
                 );
               }
@@ -61,16 +62,38 @@ export class QuanLyPhimComponent implements OnInit {
   }
 
 
-  handleEditMovie(movie: any) {
+  handleEditMovie(movie: any, imageFiles: FileList): void {
     movie.MaNhom = 'GP09';
     movie.DanhGia = '0';
+    // movie.HinhAnh = imageFiles[0].name;
+    // console.log(movie.HinhAnh);
+    // if (movie.HinhAnh !== undefined) {
+    //   console.log(movie);
+    //   this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
+    //     .subscribe(
+    //       (res) => {
+    //         this.phimService.CapNhatPhim(movie)
+    //           .subscribe(
+    //             result => {
+    //               this.phimService.LayDanhSachPhim().subscribe(
+    //                 (data) => {
+    //                   this.danhSachPhim.data = data;
+    //                   $('#modalEditFilm').modal('hide');
+    //                 }
+    //               );
+    //             }
+    //           );
+    //       }
+    //     );
+    // } else {
     this.phimService.CapNhatPhim(movie).subscribe(
       (res) => {
         this.phimService.LayDanhSachPhim().subscribe(
-          (data) => { this.danhSachPhim.data = data; }
+          (data) => { this.danhSachPhim.data = data; $('#modalEditFilm').modal('hide'); }
         );
       }
     );
+    // }
   }
 
   XoaPhim(Phim: any) {
@@ -94,7 +117,6 @@ export class QuanLyPhimComponent implements OnInit {
       TenPhim: Phim.TenPhim,
       MoTa: Phim.MoTa,
       Trailer: Phim.Trailer,
-      //HinhAnh: Phim.HinhAnh,
       NgayKhoiChieu: Phim.NgayKhoiChieu
     };
     this.formEditMovie.setValue(PhimEdit);
