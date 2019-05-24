@@ -20,6 +20,12 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
   showContent(trailer: string) {
     this.contentModal = trailer;
   }
+  close() {
+    $('.iframe-youtube').each(function() {
+      $(this).attr('src', $(this).attr('src'));
+      console.log($(this).attr('src'));
+    });
+  }
 
   ngOnInit() {
     this.phim.LayDanhSachPhim().subscribe(
