@@ -20,7 +20,11 @@ export class PhimSapChieuComponent implements OnInit, AfterViewInit {
   showContent(trailer: string) {
     this.contentModal = trailer;
   }
-
+  close() {
+    $('.iframe-youtube').each(function() {
+      $(this).attr('src', $(this).attr('src'));
+    });
+  }
   constructor() { }
   ngOnInit() {
 

@@ -65,13 +65,14 @@ export class NavbarComponent implements OnInit {
     this.isShowDN = true;
   }
   ngOnInit() {
-    if (localStorage) {
+    if (localStorage.length !== 0) {
       this.isShowDX = true;
       this.isShowDN = false;
     } else {
       this.isShowDN = true;
       this.isShowDX = false;
     }
+    console.log(this.isShowDN, this.isShowDX);
   }
 
 }

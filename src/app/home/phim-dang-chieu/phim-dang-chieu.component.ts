@@ -23,7 +23,6 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
   close() {
     $('.iframe-youtube').each(function() {
       $(this).attr('src', $(this).attr('src'));
-      console.log($(this).attr('src'));
     });
   }
 
