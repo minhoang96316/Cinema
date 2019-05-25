@@ -11,6 +11,10 @@ import { Phim } from 'src/app/share/model/Phim';
 export class NoiDungComponent implements OnInit {
   phim: Phim;
   isShowContent = false;
+  scrollToElement(element): void {
+    console.log(element);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+  }
   constructor(private chiTietPhim: PhimService, private route: ActivatedRoute) { }
   LayThongTinPhim(maPhim) {
     this.chiTietPhim.LayChiTietPhim(maPhim)

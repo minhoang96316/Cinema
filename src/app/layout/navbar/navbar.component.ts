@@ -4,6 +4,7 @@ import { NguoiDungService } from 'src/app/share/service/nguoi-dung.service';
 import { $ } from 'jquery';
 import { NguoiDung } from 'src/app/share/model/nguoi-dung';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ declare var $: any;
 export class NavbarComponent implements OnInit {
   @ViewChild('formDN') formDN: NgForm;
 
-  constructor(private nguoiDungService: NguoiDungService) { }
+  constructor(private nguoiDungService: NguoiDungService, private router: Router) { }
   MaLoaiNguoiDung = 'KhachHang';
   MaNhom = 'GP09';
   MangNhom = [];
@@ -30,6 +31,11 @@ export class NavbarComponent implements OnInit {
           // alert('success');
           this.isShowDN = false;
           this.isShowDX = true;
+          let user: any;
+          user = JSON.parse(localStorage.getItem('loginUser'));
+          if (user.MaLoaiNguoiDung === 'QuanTri') {
+            this.router.navigate(['/admin']);
+          }
           $('#modelDangNhap').modal('hide');
           this.formDN.resetForm();
         } else {

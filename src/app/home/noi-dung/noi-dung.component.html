@@ -14,12 +14,12 @@
             <span>{{phim.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</span>
             <h1>{{phim.TenPhim}}</h1>
             <p>{{phim.MoTa}}</p>
-            <button class="btn btn-danger">Mua Vé</button>
+            <button (click)="scrollToElement(target)" class="btn btn-danger" >Mua Vé</button>
           </div>
         </div>
   </div>
   
-  <div class="button_booking">
+  <div class="button_booking" #target >
       <button class="btn  mt-5 mr-2" [routerLink]="['/home/trang-dat-ve',lichchieu.MaLichChieu]"
       *ngFor="let lichchieu of phim.LichChieu">
       {{lichchieu.NgayChieuGioChieu| date:'dd/MM'}}

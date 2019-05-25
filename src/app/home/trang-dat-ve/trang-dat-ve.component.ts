@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DanhSachGheComponent } from '../danh-sach-ghe/danh-sach-ghe.component';
 import { VeService } from 'src/app/share/service/ve.service';
 
@@ -12,7 +12,7 @@ export class TrangDatVeComponent implements OnInit {
   @ViewChild(DanhSachGheComponent) dsGhe: DanhSachGheComponent;
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
-  constructor(private route: ActivatedRoute, private veService: VeService) { }
+  constructor(private route: ActivatedRoute, private veService: VeService, private router: Router) { }
   LayTaiKhoanNguoiDung() {
     const nguoiDungHienTai = JSON.parse(localStorage.getItem('loginUser'));
     if (nguoiDungHienTai !== null) {
@@ -31,19 +31,8 @@ export class TrangDatVeComponent implements OnInit {
     console.log(ve);
     this.veService.DatVe(ve).subscribe(
       (result) => {
-        alert('Are you sure');
         console.log(result);
-        this.route.params
-          .subscribe((res) => {
-            this.MaLichChieu = res.maLichChieu;
-            this.veService.LayChiTietPhongVe(this.MaLichChieu).subscribe(
-              (kq) => {
-                this.DanhSachGhe = kq.DanhSachGhe;
-                console.log(kq.DanhSachGhe);
-              }
-            );
-          },
-            (error) => { console.log(error); });
+        this.router.navigate(['/home']);
       },
       (err) => {
         console.log(err);

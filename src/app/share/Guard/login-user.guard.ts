@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginAdminGuard implements CanActivate {
+export class LoginUserGuard implements CanActivate {
   checkLogin(): boolean {
     if (localStorage.getItem('loginUser')) {
       let user: any;
       user = JSON.parse(localStorage.getItem('loginUser'));
-      if (user.MaLoaiNguoiDung === 'QuanTri') {
+      if (user.MaLoaiNguoiDung === 'KhachHang') {
         return true;
       } else { return false; }
     }
@@ -22,7 +22,7 @@ export class LoginAdminGuard implements CanActivate {
     if (this.checkLogin()) {
       return true;
     }
-    alert('Vui lòng đăng nhập tài khoản admin');
+    alert('Vui lòng đăng nhập tài khoản user');
     this.router.navigate(['/home']);
   }
   constructor(private router: Router) {
