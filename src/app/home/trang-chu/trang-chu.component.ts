@@ -21,7 +21,7 @@ export class TrangChuComponent implements OnInit, AfterViewInit {
       setTimeout(() => {
         const element = document.getElementById(JSON.parse(localStorage.getItem('Id')));
         console.log(element);
-        element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'center' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
         localStorage.removeItem('Id');
       }, 500);
 
