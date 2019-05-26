@@ -14,7 +14,9 @@ declare var $: any;
 export class NavbarComponent implements OnInit {
   @ViewChild('formDN') formDN: NgForm;
   @Output() selectEmit = new EventEmitter();
+  @Output() emitStatus = new EventEmitter();
   constructor(private nguoiDungService: NguoiDungService, private router: Router) { }
+  status = true;
   MaLoaiNguoiDung = 'KhachHang';
   MaNhom = 'GP09';
   MangNhom = [];
@@ -23,13 +25,16 @@ export class NavbarComponent implements OnInit {
   isShowFormDK = false;
   isShowDN: boolean;
   isShowDX: boolean;
+  emitStatusChild() {
+    this.emitStatus.emit(this.status);
+  }
   select(value) {
     if (value === 'LichChieu') {
       this.selectEmit.emit('LichChieu');
     } else if (value === 'TinTuc') {
-      this.selectEmit.emit('TinTuc')
+      this.selectEmit.emit('TinTuc');
     } else if (value === 'UngDung') {
-      this.selectEmit.emit('UngDung')
+      this.selectEmit.emit('UngDung');
     }
   }
   handleSignin(nguoiDung: any) {

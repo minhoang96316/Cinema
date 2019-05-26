@@ -5,13 +5,13 @@
   <nav class="header__menu">
     <ul class="mb-0">
       <li>
-        <a (click)="select('LichChieu')">Lịch chiếu</a>
+        <a (click)="select('LichChieu');emitStatusChild()">Lịch chiếu</a>
       </li>
       <li>
-        <a (click)="select('TinTuc')">Tin tức</a>
+        <a (click)="select('TinTuc');emitStatusChild()">Tin tức</a>
       </li>
       <li>
-        <a (click)="select('UngDung')">Ứng dụng</a>
+        <a (click)="select('UngDung');emitStatusChild()">Ứng dụng</a>
       </li>
     </ul>
   </nav>

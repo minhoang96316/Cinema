@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 
 @Component({
@@ -6,18 +6,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './trang-chu.component.html',
   styleUrls: ['./trang-chu.component.scss']
 })
-export class TrangChuComponent implements OnInit {
+export class TrangChuComponent implements OnInit, AfterViewInit {
   scrollToElement(id): void {
     const element = document.getElementById(id);
     console.log(element);
-    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   }
-  display(value) {
-    console.log(value);
-  }
+
   constructor() { }
 
   ngOnInit() {
+    if (localStorage.getItem('Id')) {
+      // this.scrollToElement(JSON.parse(localStorage.getItem('Id')));
+      setTimeout(() => {
+        const element = document.getElementById(JSON.parse(localStorage.getItem('Id')));
+        console.log(element);
+        element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'center' });
+        localStorage.removeItem('Id');
+      }, 500);
+
+    }
+  }
+  ngAfterViewInit() {
+
   }
 
 }
