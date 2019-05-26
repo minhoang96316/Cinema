@@ -15,9 +15,8 @@
       </li>
     </ul>
   </nav>
-  <!-- <a href="#" class="signin">
 
-  </a> -->
+  <p *ngIf="isShowDX">Xin chào {{userName}}</p>
   <!-- Button trigger modal -->
   <button *ngIf="isShowDN" type="button" class="login_button" data-toggle="modal" data-target="#modelDangNhap">
     <i class="fa fa-user-circle"></i>

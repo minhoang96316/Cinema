@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
   @Output() emitStatus = new EventEmitter();
   constructor(private nguoiDungService: NguoiDungService, private router: Router) { }
   status = true;
+  userName = '';
   MaLoaiNguoiDung = 'KhachHang';
   MaNhom = 'GP09';
   MangNhom = [];
@@ -47,6 +48,7 @@ export class NavbarComponent implements OnInit {
           this.isShowDX = true;
           let user: any;
           user = JSON.parse(localStorage.getItem('loginUser'));
+          this.userName = user.HoTen;
           if (user.MaLoaiNguoiDung === 'QuanTri') {
             this.router.navigate(['/admin']);
           }
@@ -55,6 +57,7 @@ export class NavbarComponent implements OnInit {
         } else {
           this.isShowDX = false;
           this.isShowDN = true;
+          alert(res);
         }
       },
       (error) => { console.log(error); }
@@ -93,6 +96,7 @@ export class NavbarComponent implements OnInit {
     if (localStorage.length !== 0) {
       this.isShowDX = true;
       this.isShowDN = false;
+      this.userName = JSON.parse(localStorage.getItem('loginUser')).HoTen;
     } else {
       this.isShowDN = true;
       this.isShowDX = false;
