@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { $ } from 'jquery';
 
 import { Phim } from 'src/app/share/model/Phim';
@@ -11,7 +11,7 @@ declare var $: any;
   templateUrl: './phim-dang-chieu.component.html',
   styleUrls: ['./phim-dang-chieu.component.scss']
 })
-export class PhimDangChieuComponent implements OnInit, AfterViewInit {
+export class PhimDangChieuComponent implements OnInit {
   DanhSachPhimDangChieu: Phim[] = [];
 
   constructor(private phim: PhimService) { }
@@ -30,31 +30,29 @@ export class PhimDangChieuComponent implements OnInit, AfterViewInit {
     this.phim.LayDanhSachPhim().subscribe(
       result => {
         this.DanhSachPhimDangChieu = result;
+        setTimeout(() => {
+          $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+              0: {
+                items: 1
+              },
+              600: {
+                items: 3
+              },
+              1000: {
+                items: 4
+              }
+            }
+          });
+        }, 1);
         console.log(result);
       },
       error => { console.log(error); },
     );
   }
-  ngAfterViewInit() {
-    setTimeout(() => {
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          600: {
-            items: 3
-          },
-          1000: {
-            items: 4
-          }
-        }
-      });
-    }, 400);
 
-  }
 
 }
