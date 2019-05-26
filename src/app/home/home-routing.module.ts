@@ -12,9 +12,12 @@ const homeRoutes: Routes = [
       { path: '', component: TrangChuComponent },
       { path: 'trang-chu', component: TrangChuComponent },
       { path: 'trang-chi-tiet/:maPhim', component: TrangChiTietComponent },
-      { path: 'trang-dat-ve/:maLichChieu', component: TrangDatVeComponent, canActivate: [LoginUserGuard] }
-    ]
+      { path: 'trang-dat-ve/:maLichChieu', component: TrangDatVeComponent, canActivate: [LoginUserGuard] },
+    ],
   },
+  {
+    path: '**', redirectTo: '', pathMatch: 'full'
+  }
 
 ];
 

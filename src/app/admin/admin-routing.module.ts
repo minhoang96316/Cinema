@@ -6,6 +6,9 @@ import { LoginAdminGuard } from '../share/Guard/login-admin.guard';
 
 const adminRoutes: Routes = [{
   path: '', component: LayoutAdminComponent, canActivate: [LoginAdminGuard]
+},
+{
+  path: '**', redirectTo: '', pathMatch: 'full'
 }
 ];
 
