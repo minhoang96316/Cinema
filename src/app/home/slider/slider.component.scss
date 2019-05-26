@@ -37,3 +37,22 @@
     transition: all .5s;
     
 }
+
+.movie_play_button{ 
+    border: unset;
+    background-color: transparent;
+    outline: none;   
+}
+.close{
+    position: absolute;
+    top: -20px;
+    right: -120px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: transparent;
+    outline: unset;
+    border: solid 1px white;
+    color: white;
+    font-size: 20px
+}
