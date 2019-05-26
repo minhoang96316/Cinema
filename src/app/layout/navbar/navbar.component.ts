@@ -93,7 +93,7 @@ export class NavbarComponent implements OnInit {
     this.isShowDN = true;
   }
   ngOnInit() {
-    if (localStorage.length !== 0) {
+    if (localStorage.getItem('loginUser')) {
       this.isShowDX = true;
       this.isShowDN = false;
       this.userName = JSON.parse(localStorage.getItem('loginUser')).HoTen;
