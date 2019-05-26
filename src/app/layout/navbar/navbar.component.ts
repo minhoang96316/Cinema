@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { NguoiDungService } from 'src/app/share/service/nguoi-dung.service';
 
 import { $ } from 'jquery';
@@ -13,7 +13,7 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('formDN') formDN: NgForm;
-
+  @Output() selectEmit = new EventEmitter();
   constructor(private nguoiDungService: NguoiDungService, private router: Router) { }
   MaLoaiNguoiDung = 'KhachHang';
   MaNhom = 'GP09';
@@ -23,6 +23,15 @@ export class NavbarComponent implements OnInit {
   isShowFormDK = false;
   isShowDN: boolean;
   isShowDX: boolean;
+  select(value) {
+    if (value === 'LichChieu') {
+      this.selectEmit.emit('LichChieu');
+    } else if (value === 'TinTuc') {
+      this.selectEmit.emit('TinTuc')
+    } else if (value === 'UngDung') {
+      this.selectEmit.emit('UngDung')
+    }
+  }
   handleSignin(nguoiDung: any) {
     this.nguoiDungService.DangNhap(nguoiDung).subscribe(
       (res) => {

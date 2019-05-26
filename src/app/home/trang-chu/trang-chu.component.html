@@ -1,20 +1,19 @@
-<app-navbar></app-navbar>
+<app-navbar (selectEmit)="scrollToElement($event)"></app-navbar>
 <div style="margin-bottom: -24px">
     <app-slider></app-slider>
 </div>
 
 <div class="myListFilm">
     <div class="container">
-        <app-loai-phim></app-loai-phim>
-
+        <app-loai-phim id="LichChieu"></app-loai-phim>
     </div>
 </div>
-<div class="myListNews" style="padding: 50px 0">
+<div class="myListNews" style="padding: 50px 0" id="TinTuc">
     <div class="container">
         <app-tin-tuc></app-tin-tuc>
     </div>
 </div>
 
-<app-ung-dung></app-ung-dung>
+<app-ung-dung id="UngDung"></app-ung-dung>
 <!-- <app-lien-he></app-lien-he> -->
 <app-footer></app-footer>
