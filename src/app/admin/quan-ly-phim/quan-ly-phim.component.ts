@@ -40,25 +40,27 @@ export class QuanLyPhimComponent implements OnInit {
     movie.MaPhim = '';
     movie.MaNhom = 'GP09';
     movie.DanhGia = '0';
-    movie.HinhAnh = imageFiles[0].name;
-    this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
-      .subscribe(
-        (res) => {
-          this.phimService.ThemPhim(movie)
-            .subscribe(
-              result => {
-                this.phimService.LayDanhSachPhim().subscribe(
-                  (data) => {
-                    this.danhSachPhim.data = data;
-                    console.log(this.danhSachPhim.data);
-                    this.formAddMovie.resetForm();
-                    $('#modalAddFilm').modal('hide');
-                  }
-                );
-              }
-            );
-        }
-      );
+    if (imageFiles[0] !== undefined) {
+      movie.HinhAnh = imageFiles[0].name;
+      this.phimService.uploadFile(imageFiles[0], movie.TenPhim)
+        .subscribe(
+          (res) => {
+            this.phimService.ThemPhim(movie)
+              .subscribe(
+                result => {
+                  this.phimService.LayDanhSachPhim().subscribe(
+                    (data) => {
+                      this.danhSachPhim.data = data;
+                      console.log(this.danhSachPhim.data);
+                      this.formAddMovie.resetForm();
+                      $('#modalAddFilm').modal('hide');
+                    }
+                  );
+                }
+              );
+          }
+        );
+    } else { alert('Chua upload hinh'); }
   }
 
 
