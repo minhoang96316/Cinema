@@ -13,7 +13,7 @@
     <div class="carousel-item" *ngFor="let phim of DanhSachPhim;let i=index" [class.active]="i === 0">
       <img src={{phim.HinhAnh}}>
       <div class="backgr_img">
-        <button class="movie_play_button" (click)="trailer(phim.Trailer)" data-toggle="modal" data-target="#modelId">
+        <button class="movie_play_button" (click)="trailer(phim.Trailer)" data-toggle="modal" data-target="#modelTitleSlider">
           <img src="../../../assets/img/play-video.png" alt="">
         </button>
       </div>
@@ -21,7 +21,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal fade" id="modelTitleSlider" tabindex="-1" role="dialog" aria-labelledby="modelTitleSlider" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <button class="close" (click)="close()" data-dismiss="modal">X</button>
@@ -39,3 +39,6 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
+
+
+
