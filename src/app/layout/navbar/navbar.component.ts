@@ -102,6 +102,10 @@ export class NavbarComponent implements OnInit {
       this.isShowDX = false;
     }
     this.MangNhom = ['GP01', 'GP02', 'GP03', 'GP04', 'GP05', 'GP06', 'GP07', 'GP08', 'GP09'];
+    const user = JSON.parse(localStorage.getItem('loginUser'));
+    if (user.MaLoaiNguoiDung === 'QuanTri') {
+      this.router.navigate(['/admin']);
+    }
   }
 
 }

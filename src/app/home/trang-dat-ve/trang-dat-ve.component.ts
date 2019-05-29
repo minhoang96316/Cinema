@@ -25,7 +25,7 @@ export class TrangDatVeComponent implements OnInit {
   layThongTinVe() {
     const ve = {
       MaLichChieu: this.MaLichChieu,
-      TaiKhoan: this.LayTaiKhoanNguoiDung(),
+      TaiKhoanNguoiDung: this.LayTaiKhoanNguoiDung(),
       DanhSachVe: this.dsGhe.DanhSachGheDangDat,
     };
     console.log(ve);

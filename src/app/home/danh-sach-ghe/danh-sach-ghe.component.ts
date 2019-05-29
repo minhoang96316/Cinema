@@ -27,7 +27,7 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       this.soGheConTrong++;
       for (const index in this.DanhSachGheDangDat) {
         if (this.DanhSachGheDangDat[index].MaGhe === ghe.MaGhe) {
-          this.DanhSachGheDangDat.splice(parseInt(index), 1);
+          this.DanhSachGheDangDat.splice(parseInt(index, 10), 1);
         }
       }
       for (const index in this.DanhSachGheDangDat2) {
