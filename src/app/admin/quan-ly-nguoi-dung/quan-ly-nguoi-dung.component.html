@@ -91,11 +91,8 @@
       <div class="modal-body">
         <form #FormEdit="ngForm" (ngSubmit)="handleEdit(FormEdit.value)">
           <div class="form-group">
-            <input type="text" name="TaiKhoan" #TaiKhoan="ngModel" placeholder="Tài Khoản" ngModel required
+            <input readonly="readonly" type="text" name="TaiKhoan" placeholder="Tài Khoản" ngModel
               class="form-control">
-            <div *ngIf="TaiKhoan.errors && (TaiKhoan.touched || TaiKhoan.dirty)">
-              <p *ngIf="TaiKhoan.errors.required" class="alert alert-danger">* vui lòng nhập tài khoản</p>
-            </div>
           </div>
           <div class="form-group">
             <input type="password" required #MatKhau="ngModel" name="MatKhau" placeholder="Mật Khẩu" ngModel

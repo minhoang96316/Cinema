@@ -54,7 +54,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
                         }, (error) => { console.log(error); }
                     );
                     this.signupForm.reset({
-                        MaNhom : 'GP09',
+                        MaNhom: 'GP09',
                         MaLoaiNguoiDung: 'KhachHang'
                     });
                     $('#modalId').modal('hide');

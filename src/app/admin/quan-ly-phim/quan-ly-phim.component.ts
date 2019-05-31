@@ -104,4 +104,7 @@ export class QuanLyPhimComponent implements OnInit {
     this.formEditMovie.setValue(PhimEdit);
     console.log(Phim.NgayKhoiChieu);
   }
+  applyFilter(filterValue: string) {
+    this.danhSachPhim.filter = filterValue.trim().toLowerCase();
+}
 }

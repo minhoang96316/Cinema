@@ -32,7 +32,7 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       }
       for (const index in this.DanhSachGheDangDat2) {
         if (this.DanhSachGheDangDat2[index].MaGhe === ghe.MaGhe) {
-          this.DanhSachGheDangDat2.splice(parseInt(index), 1);
+          this.DanhSachGheDangDat2.splice(parseInt(index, 10), 1);
         }
       }
     }
