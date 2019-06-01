@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Phim } from 'src/app/share/model/Phim';
 
 @Component({
   selector: 'app-danh-sach-ghe',
@@ -7,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class DanhSachGheComponent implements OnInit, OnChanges {
   @Input() mangGhe: any[] = [];
+  @Input() Itemphim: Phim;
   soGheDaChon = 0;
   soGheConTrong: number;
   DanhSachGheDangDat = [];

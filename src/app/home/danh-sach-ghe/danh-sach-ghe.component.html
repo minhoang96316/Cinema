@@ -1,15 +1,34 @@
-<div class="container">
-  <div class="row">
-    <div class="col-5 mx-auto">
-      <app-ghe *ngFor="let ghe of mangGhe" [ghe]="ghe" (emitStatus)="datGheParent($event,ghe)"></app-ghe>
-      <hr />
-      <p>So ghe da dat: {{soGheDaChon}}</p>
-      <p>So ghe con lai: {{soGheConTrong}}</p>
-      <hr />
-      <p *ngFor = "let gheDuocChon of DanhSachGheDangDat2">
-        <span>Ten Ghe: {{gheDuocChon.TenGhe}}</span>
-        <span>Gia:{{gheDuocChon.GiaVe}} </span>
-      </p>
+<div class="container myTheater">
+  
+  <div class="screen">
+    <img style="width: 60%" src="../../../assets/img/manhinh.png" alt="">
+  </div>
+  <div class="gheList">
+    <div class="row">
+      <div class="col-5 mx-auto">
+        <div class="col-10 " style="margin: 0 auto">
+          <app-ghe *ngFor="let ghe of mangGhe" [ghe]="ghe" (emitStatus)="datGheParent($event,ghe)"></app-ghe>
+        </div>
+        <hr />
+       <p>Ghế được đặt:
+          <span *ngFor="let gheDuocChon of DanhSachGheDangDat2"> {{gheDuocChon.TenGhe}}</span>
+       </p>
+          
+      </div>
     </div>
   </div>
+  <div class="note">
+    <div class="note_content">
+        <div class="row" >
+            <button class="btn btn_chuadat mr-2" disabled></button>
+            <span class="mr-2">: ghế chưa được đặt</span>
+            <button class="btn btn_dadat mr-2" disabled></button>
+            <span class="mr-2">: ghế được chọn</span>
+            <button class="btn btn_disable mr-2" disabled></button>
+            <span class="mr-2">: ghế đã được đặt</span>
+          </div>
+    </div>
+    
+  </div>
+
 </div>

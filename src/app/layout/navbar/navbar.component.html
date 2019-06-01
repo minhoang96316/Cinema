@@ -15,15 +15,17 @@
       </li>
     </ul>
   </nav>
-  <p *ngIf="isShowDX">Xin chào {{userName}}</p>
+  
   <!-- Button trigger modal -->
   <button *ngIf="isShowDN" type="button" class="login_button" data-toggle="modal" data-target="#modelDangNhap">
     <i class="fa fa-user-circle"></i>
     <span>Đăng nhập</span>
   </button>
-  <button *ngIf="isShowDX" type="button" class="login_button" (click)="signOut()">
-    <i class="fa fa-sign-out"></i>
-    <span>Đăng xuất</span>
+  <button *ngIf="isShowDX" type="button" class="login_button" (click)="signOut()" >
+    
+    <span *ngIf="isShowDX"> {{userName}}</span>
+    <span *ngIf="!isShowDX">Đăng xuất</span>
+    <i class="fa fa-sign-out ml-2" ></i>
   </button>
 </header>
 <!-- Modal -->
@@ -102,7 +104,7 @@
             <p *ngIf="SoDT.errors.pattern" class="alert alert-danger">*Số điện thoại chưa hợp lệ</p>
           </div>
           </div>
-          <div class="form-group form_select" style="text-align:center">
+          <!-- <div class="form-group form_select" style="text-align:center">
             <label for="">Mã nhóm</label>
             <select class="form-control" [(ngModel)]="MaNhom" name="MaNhom" id="MaNhom" ngModel>
               <option *ngFor="let Nhom of MangNhom" [value]="Nhom">{{Nhom}}</option>
@@ -112,7 +114,7 @@
             <label for="">Loại Người Dùng: </label>
             <input type="radio" name="MaLoaiNguoiDung" ngModel value="QuanTri">Quản trị viên
             <input type="radio" [(ngModel)]="MaLoaiNguoiDung" checked name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách Hàng
-          </div>
+          </div> -->
           <div class="form-group text-center">
             <button type="submit" [disabled]="!signupForm.valid" class="btn btn_btn">Đăng Ký</button>
             <button type="button" class="btn btn_btn ml-2" (click)="showFormDN()">Đăng nhập</button>

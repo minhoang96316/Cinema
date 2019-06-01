@@ -1,0 +1,33 @@
+.myTheater{
+    margin: 0 auto;
+}
+.screen{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.note{
+    width: 60%;
+    margin: 0 auto;
+}
+.note_content{
+    display: flex;
+    justify-content: center;
+
+}
+.note button{
+    width: 30px;
+    height: 30px;
+}
+.btn_dadat {
+    background-color: green;
+}
+.btn_disable{
+    background-color: black;
+    padding: 2px 5px;
+}
+    
+
+.btn_chuadat{
+    background-color: #cecece;
+}

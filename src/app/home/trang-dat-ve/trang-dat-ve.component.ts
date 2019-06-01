@@ -12,6 +12,7 @@ export class TrangDatVeComponent implements OnInit {
   @ViewChild(DanhSachGheComponent) dsGhe: DanhSachGheComponent;
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
+  
   constructor(private route: ActivatedRoute, private veService: VeService, private router: Router) { }
   LayTaiKhoanNguoiDung() {
     const nguoiDungHienTai = JSON.parse(localStorage.getItem('loginUser'));

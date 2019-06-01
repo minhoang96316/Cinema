@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./ghe.component.scss']
 })
 export class GheComponent implements OnInit {
+  gheStatus:boolean = true;
   status = false;
   @Output() emitStatus = new EventEmitter();
   @Input() ghe;
@@ -20,6 +21,8 @@ export class GheComponent implements OnInit {
     this.emitStatus.emit(this.status);
   }
   ngOnInit() {
+    this.gheStatus = this.ghe.DaDat;
+    
   }
 
 }

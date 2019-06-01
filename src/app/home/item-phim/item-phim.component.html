@@ -1,4 +1,4 @@
-<div class="movie__item item"  (mouseover)="showName()" (mouseleave)="hideButton()"> 
+<div class="movie__item item" > 
   <div class="movie_item_img">
     <img [src]="Itemphim.HinhAnh" alt="" style="width: 200px;height:300px">
     <button class="movie_play_button" data-toggle="modal" data-target="#modelId" (click)="emitTrailer()">
@@ -9,11 +9,17 @@
     </div>
   </div>
 
-  <div class="movie_title" *ngIf = "isShowName">
+  <div class="movie_title" >
     <p>{{Itemphim.TenPhim}}</p>
   </div>
-  <div class="movie_button" *ngIf="isShowButton" >
+  <div class="movie_button">
     <button class="btn btn_booked" style="width: 200px" routerLink='trang-chi-tiet/{{Itemphim.MaPhim}}'>Đặt Vé</button>
   </div>
+
+  <!-- <div class="movie_play_button" >
+            
+    </div> -->
+
   
+
 </div>

@@ -13,7 +13,7 @@
 .bgr_img img{
     width: 100%;
     filter: blur(10px);
-    
+    transform: scale(1.1); 
 }
 //detail_content
 .detail_detail{
@@ -67,6 +67,16 @@ span{
 .button_booking{
     width: 60%;
     margin: 0 auto;
+    height: 150px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+.button_booking h1{
+   font-size: 30px;
+   color: rgb(99, 92, 92);
+   font-weight: bold;
+   text-align: center
 }
 //button_booking
 .button_booking button{

@@ -26,6 +26,7 @@ import { PipeModule } from '../share/pipe/pipe.module';
 import { TrangDatVeComponent } from './trang-dat-ve/trang-dat-ve.component';
 import { GheComponent } from './ghe/ghe.component';
 import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
+import { TimKiemComponent } from './tim-kiem/tim-kiem.component';
 
 
 
@@ -54,6 +55,7 @@ import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
     TrangDatVeComponent,
     GheComponent,
     DanhSachGheComponent,
+    TimKiemComponent,
    ],
   imports: [
     CommonModule,
