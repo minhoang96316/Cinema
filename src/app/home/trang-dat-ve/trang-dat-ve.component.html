@@ -1,12 +1,12 @@
 <app-navbar ></app-navbar>
 <div class="myBookingpage">
     <div class="myChair">
-        <app-danh-sach-ghe [mangGhe]= "DanhSachGhe"></app-danh-sach-ghe>
+        <app-danh-sach-ghe [mangGhe]= "DanhSachGhe" (emitTongTienVe)="tongTien($event)"></app-danh-sach-ghe>
       </div>
     
       <div class="myPay">
         <div class="pay_total">
-          <h1> 120000 VNĐ</h1>
+          <h1> {{tienVe}} VNĐ</h1>
         </div>   
         <div class="movie_details">
           <div class="row">

@@ -1,29 +1,10 @@
 <div class="myCombo">
   <div class="combo_tittle" data-toggle="collapse" data-target="#combo">
-      <h1>Chọn Combo</h1>
-      <i class="fa fa-cart-arrow-down"></i>
+    <h1>Chọn Combo</h1>
+    <i class="fa fa-cart-arrow-down"></i>
   </div>
- 
+
   <div class="combo_list collapse" id="combo">
-    <div class="combo_item" *ngFor =" let combo of DanhSachCombo">
-      <div class="row" style="margin-right: unset;margin-left: unset;">
-        <img [src]="combo.image" alt="">
-        <button class="btn_detail" data-toggle="collapse" data-target="#alo" ><img src="../../../assets/img/details.png" alt=""></button>
-        
-        <div class="item_content">
-          <p>{{combo.tittle}}</p>
-          <span>{{combo.price}} VNĐ</span>
-        </div>
-        <div class="item_detail collapse" id="alo">
-            <p>{{combo.details}}</p>
-          </div>
-        <div class="item_button">
-          <button class="minus">-</button>
-          <span>1</span>
-          <button class="plus">+</button>
-        </div>
-      </div>
-    </div>
-    
+        <app-item-combo *ngFor=" let combo of DanhSachCombo" [combo]="combo"></app-item-combo>
   </div>
 </div>

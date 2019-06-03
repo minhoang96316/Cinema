@@ -28,6 +28,7 @@ import { GheComponent } from './ghe/ghe.component';
 import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
 import { TimKiemComponent } from './tim-kiem/tim-kiem.component';
 import { ComboBapNuocComponent } from './combo-bap-nuoc/combo-bap-nuoc.component';
+import { ItemComboComponent } from './item-combo/item-combo.component';
 
 
 
@@ -58,6 +59,7 @@ import { ComboBapNuocComponent } from './combo-bap-nuoc/combo-bap-nuoc.component
     DanhSachGheComponent,
     TimKiemComponent,
     ComboBapNuocComponent,
+    ItemComboComponent,
    ],
   imports: [
     CommonModule,

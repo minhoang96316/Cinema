@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
 import { Phim } from 'src/app/share/model/Phim';
 
 @Component({
@@ -8,21 +8,22 @@ import { Phim } from 'src/app/share/model/Phim';
 })
 export class DanhSachGheComponent implements OnInit, OnChanges {
   @Input() mangGhe: any[] = [];
-  Tong:number ;
+  @Output() emitTongTienVe = new EventEmitter();
+  Tong: number;
   soGheDaChon = 0;
   soGheConTrong: number;
   DanhSachGheDangDat = [];
   DanhSachGheDangDat2 = [];
   show() {
-    let Tien:number = 0
-    for (const index in this.DanhSachGheDangDat){
-     Tien += this.DanhSachGheDangDat[index].GiaVe
+    let Tien = 0;
+    // tslint:disable-next-line:forin
+    for (const index in this.DanhSachGheDangDat) {
+      Tien += this.DanhSachGheDangDat[index].GiaVe;
     }
-    console.log(Tien);
-    
-   this.Tong = Tien
-    
+    this.Tong = Tien;
+    this.emitTongTienVe.emit(this.Tong);
   }
+
   datGheParent(status, ghe) {
     const ve: { MaGhe: number, GiaVe: number } = {
       MaGhe: ghe.MaGhe,
@@ -33,7 +34,7 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       this.soGheConTrong--;
       this.DanhSachGheDangDat.push(ve);
       this.DanhSachGheDangDat2.push(ghe);
-      
+
     } else {
       this.soGheDaChon--;
       this.soGheConTrong++;
@@ -41,7 +42,7 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
 
         if (this.DanhSachGheDangDat[index].MaGhe === ghe.MaGhe) {
           this.DanhSachGheDangDat.splice(parseInt(index, 10), 1);
-          
+
         }
       }
       for (const index in this.DanhSachGheDangDat2) {
@@ -50,8 +51,8 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
         }
       }
     }
-  
-    
+
+
   }
   constructor() { }
 
@@ -63,8 +64,6 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       if (ghe.DaDat) {
         this.soGheConTrong--;
       }
-    }   
-    
+    }
   }
-
 }
