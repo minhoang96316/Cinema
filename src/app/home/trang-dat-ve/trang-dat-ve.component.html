@@ -1,12 +1,33 @@
-<div class=""><app-navbar ></app-navbar></div>
-<div class="myChair">
-  <app-danh-sach-ghe [mangGhe]= "DanhSachGhe"></app-danh-sach-ghe>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-6 mx-auto ">
-      <button class="btn btn-outline-success" (click)="layThongTinVe()">Dat ve</button>
-    </div>
-  </div>
+<app-navbar ></app-navbar>
+<div class="myBookingpage">
+    <div class="myChair">
+        <app-danh-sach-ghe [mangGhe]= "DanhSachGhe"></app-danh-sach-ghe>
+      </div>
+    
+      <div class="myPay">
+        <div class="pay_total">
+          <h1> 120000 VNĐ</h1>
+        </div>   
+        <div class="movie_details">
+          <div class="row">
+              <div class="movie_img">
+                  <img src="../../../assets/img/thor-ragnarok-15088151416399.jpg" alt="">
+              </div>
+              <div class="movie_title">
+                <span>07.06.2019</span>
+                <h1>Thor: Ranakor</h1>
+                <p>Having thought that monogamy was never possible, a commitment-phobic career woman may have to face her fears when she meets a good guy.</p>
+                
+              </div>
+          </div>
+         
+        </div>
+        <div class="">
+          <app-combo-bap-nuoc></app-combo-bap-nuoc>
+        </div>
+       
+        <div class="myBooked ">
+            <button class="btn" (click)="layThongTinVe()">Dat ve</button>
+        </div>
+      </div>
 </div>

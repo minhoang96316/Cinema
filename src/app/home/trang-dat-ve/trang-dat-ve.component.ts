@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DanhSachGheComponent } from '../danh-sach-ghe/danh-sach-ghe.component';
 import { VeService } from 'src/app/share/service/ve.service';
@@ -9,6 +9,8 @@ import { VeService } from 'src/app/share/service/ve.service';
   styleUrls: ['./trang-dat-ve.component.scss']
 })
 export class TrangDatVeComponent implements OnInit {
+
+  @Input() ComboStatus;
   @ViewChild(DanhSachGheComponent) dsGhe: DanhSachGheComponent;
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
@@ -52,5 +54,7 @@ export class TrangDatVeComponent implements OnInit {
         );
       },
         (error) => { console.log(error); });
+        
+        console.log(this.ComboStatus)
   }
 }

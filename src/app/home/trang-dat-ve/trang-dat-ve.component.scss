@@ -1,3 +1,66 @@
+.myBookingpage{
+    display: flex;
+   margin-top: 70px;
+   
+}
 .myChair{
-    margin-top: 100px;
+    width: 70%;
+    margin-top: 50px;
+}
+.myPay{
+    // position: relative;
+    padding-top: 30px ;
+    width: 30%; 
+    margin-right: 50px;
+}
+.pay_total {
+    border-bottom: dotted 4px black;
+    margin-bottom: 10px;
+}
+.pay_total h1{
+    color :#4CAF50;
+    text-align: center;
+}
+.myBooked button{
+    // position: absolute;
+    // bottom: 0;
+    width: 100%;
+    font-size: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0;
+
+}
+.movie_details{
+    height: 220px;
+}
+.movie_img{
+    margin-left: 20px;
+    width: 150px;
+    height: 200px;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.5);
+
+}
+.movie_img img{
+    width: 150px;
+    height: 200px;
+}
+.movie_title{
+    padding: 10px 10px;
+    width: 240px;
+}
+.movie_title span{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(83, 30, 35);
+    
+}
+.movie_title h1{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(83, 30, 35);
+}
+.movie_title p{
+    font-size: 15px;
+    font-weight: 400;
 }

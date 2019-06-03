@@ -8,11 +8,21 @@ import { Phim } from 'src/app/share/model/Phim';
 })
 export class DanhSachGheComponent implements OnInit, OnChanges {
   @Input() mangGhe: any[] = [];
-  @Input() Itemphim: Phim;
+  Tong:number ;
   soGheDaChon = 0;
   soGheConTrong: number;
   DanhSachGheDangDat = [];
   DanhSachGheDangDat2 = [];
+  show() {
+    let Tien:number = 0
+    for (const index in this.DanhSachGheDangDat){
+     Tien += this.DanhSachGheDangDat[index].GiaVe
+    }
+    console.log(Tien);
+    
+   this.Tong = Tien
+    
+  }
   datGheParent(status, ghe) {
     const ve: { MaGhe: number, GiaVe: number } = {
       MaGhe: ghe.MaGhe,
@@ -23,13 +33,15 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       this.soGheConTrong--;
       this.DanhSachGheDangDat.push(ve);
       this.DanhSachGheDangDat2.push(ghe);
-      console.log(this.DanhSachGheDangDat);
+      
     } else {
       this.soGheDaChon--;
       this.soGheConTrong++;
       for (const index in this.DanhSachGheDangDat) {
+
         if (this.DanhSachGheDangDat[index].MaGhe === ghe.MaGhe) {
           this.DanhSachGheDangDat.splice(parseInt(index, 10), 1);
+          
         }
       }
       for (const index in this.DanhSachGheDangDat2) {
@@ -38,6 +50,8 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
         }
       }
     }
+  
+    
   }
   constructor() { }
 
@@ -49,7 +63,8 @@ export class DanhSachGheComponent implements OnInit, OnChanges {
       if (ghe.DaDat) {
         this.soGheConTrong--;
       }
-    }
+    }   
+    
   }
 
 }

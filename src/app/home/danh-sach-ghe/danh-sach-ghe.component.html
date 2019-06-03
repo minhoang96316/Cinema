@@ -1,34 +1,47 @@
 <div class="container myTheater">
   
-  <div class="screen">
-    <img style="width: 60%" src="../../../assets/img/manhinh.png" alt="">
-  </div>
-  <div class="gheList">
-    <div class="row">
-      <div class="col-5 mx-auto">
-        <div class="col-10 " style="margin: 0 auto">
-          <app-ghe *ngFor="let ghe of mangGhe" [ghe]="ghe" (emitStatus)="datGheParent($event,ghe)"></app-ghe>
-        </div>
-        <hr />
-       <p>Ghế được đặt:
-          <span *ngFor="let gheDuocChon of DanhSachGheDangDat2"> {{gheDuocChon.TenGhe}}</span>
-       </p>
-          
-      </div>
+    <div class="screen">
+      <img style="width: 60%" src="../../../assets/img/manhinh.png" alt="">
     </div>
-  </div>
-  <div class="note">
-    <div class="note_content">
-        <div class="row" >
-            <button class="btn btn_chuadat mr-2" disabled></button>
-            <span class="mr-2">: ghế chưa được đặt</span>
-            <button class="btn btn_dadat mr-2" disabled></button>
-            <span class="mr-2">: ghế được chọn</span>
-            <button class="btn btn_disable mr-2" disabled></button>
-            <span class="mr-2">: ghế đã được đặt</span>
-          </div>
-    </div>
-    
-  </div>
+    <div class="gheList">
+          <div class="row">
+              <div class="col-1 ghe_id">
+                <p>A</p>
+                <p>B</p>
+                <p>C</p>
+                <p>D</p>
+                <p>E</p>
+                <p>F</p>
+              </div>
+                <div class="col-5">         
+                    <app-ghe *ngFor="let ghe of mangGhe" [ghe]="ghe" (click)="show()" (emitStatus)="datGheParent($event,ghe)"></app-ghe>      
+                  </div>
+            </div>
 
-</div>
+     
+       
+        <hr />
+        <div class="">
+            <p style="margin-left: 30%">Ghế được đặt:
+                <span *ngFor="let gheDuocChon of DanhSachGheDangDat2"> {{gheDuocChon.TenGhe}}</span>
+             </p>
+        </div>
+        
+    </div>
+    <div class="note">
+      <div class="note_content">
+          <div class="row" >
+              <button class="btn btn_chuadat mr-2" disabled></button>
+              <span class="mr-2">: ghế trống</span>
+              <button class="btn btn_dadat mr-2" disabled></button>
+              <span class="mr-2">: ghế được chọn</span>
+              <button class="btn btn_disable mr-2" disabled>
+                  <img src="../../../assets/img/xController.png" alt="">
+              </button>
+              <span class="mr-2">: ghế đã được đặt</span>
+            </div>
+      </div>
+      
+    </div>
+  
+  </div>
