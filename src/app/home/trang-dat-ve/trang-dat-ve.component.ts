@@ -15,6 +15,8 @@ export class TrangDatVeComponent implements OnInit {
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
   tienVe = 0;
+  tienCombo = 0;
+  tongTien = 0;
   constructor(private route: ActivatedRoute, private veService: VeService, private router: Router) { }
   LayTaiKhoanNguoiDung() {
     const nguoiDungHienTai = JSON.parse(localStorage.getItem('loginUser'));
@@ -26,8 +28,16 @@ export class TrangDatVeComponent implements OnInit {
     }
   }
 
-  tongTien(tien) {
+  tongTienVe(tien) {
     this.tienVe = tien;
+  }
+
+  tongTienCombo(tien) {
+    this.tienCombo = tien;
+  }
+
+  tongTienDat(): number {
+    return this.tongTien = this.tienVe + this.tienCombo;
   }
 
   layThongTinVe() {
@@ -59,7 +69,5 @@ export class TrangDatVeComponent implements OnInit {
         );
       },
         (error) => { console.log(error); });
-
-    console.log(this.ComboStatus);
   }
 }

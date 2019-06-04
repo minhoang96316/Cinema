@@ -7,10 +7,10 @@
     <p>{{combo.tittle}}</p>
     <span>{{combo.price}} VNĐ</span>
   </div>
-  <div class="item_button">
-    <button class="minus" (click)="giamSoLuong()">-</button>
-    <span>{{soLuong}}</span>
-    <button class="plus" (click)="tangSoLuong()">+</button>
+  <div class="item_button"> 
+    <button class="minus" (click)="desComBo()">-</button>
+    <span>{{combo.quantity}}</span>
+    <button class="plus" (click)="addComBo()">+</button>
   </div>
 </div>
 <div [id]="combo.id" class="item_detail collapse">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { $ } from 'jquery';
 declare var $: any;
 @Component({
@@ -8,7 +8,11 @@ declare var $: any;
 })
 export class ItemComboComponent implements OnInit {
   @Input() combo;
+  @Output() emitComboIns = new EventEmitter();
+  @Output() emitComboDes = new EventEmitter();
   soLuong = 0;
+  gia = 0;
+  tongGia = 0;
   name = '#';
   Showdetail(name) {
     const id = '#' + this.setIDButton(name);
@@ -24,15 +28,13 @@ export class ItemComboComponent implements OnInit {
     return name + 'button';
   }
 
-  tangSoLuong() {
-    this.soLuong += 1;
+  addComBo() {
+    return this.emitComboIns.emit(this.combo);
+  }
+  desComBo() {
+    return this.emitComboDes.emit(this.combo);
   }
 
-  giamSoLuong() {
-    if (this.soLuong > 0) {
-      this.soLuong -= 1;
-    }
-  }
 
   constructor() { }
 
