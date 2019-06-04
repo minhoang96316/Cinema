@@ -31,6 +31,7 @@ export class TimKiemComponent implements OnInit {
   LayThongTinPhim(id) {
     this.chiTietPhim.LayChiTietPhim(id)
       .subscribe((result: Phim) => {
+        localStorage.setItem('ChiTietPhim', JSON.stringify(result));
         this.film = result;
         if (this.titlefilm !== '') {
           this.searchStatus2 = !this.searchStatus2;

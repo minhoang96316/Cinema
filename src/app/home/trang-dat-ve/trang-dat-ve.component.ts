@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DanhSachGheComponent } from '../danh-sach-ghe/danh-sach-ghe.component';
 import { VeService } from 'src/app/share/service/ve.service';
+import { Phim } from 'src/app/share/model/Phim';
 
 @Component({
   selector: 'app-trang-dat-ve',
@@ -14,6 +15,7 @@ export class TrangDatVeComponent implements OnInit {
   @ViewChild(DanhSachGheComponent) dsGhe: DanhSachGheComponent;
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
+  phim: Phim = JSON.parse(localStorage.getItem('ChiTietPhim'));
   tienVe = 0;
   tienCombo = 0;
   tongTien = 0;
@@ -23,7 +25,7 @@ export class TrangDatVeComponent implements OnInit {
     if (nguoiDungHienTai !== null) {
       return nguoiDungHienTai.TaiKhoan;
     } else {
-      alert('Vui long dang nhap');
+      alert('Vui lòng đăng nhập');
       return false;
     }
   }
@@ -69,5 +71,7 @@ export class TrangDatVeComponent implements OnInit {
         );
       },
         (error) => { console.log(error); });
+    const phim: Phim = JSON.parse(localStorage.getItem('ChiTietPhim'));
+    console.log(typeof phim);
   }
 }

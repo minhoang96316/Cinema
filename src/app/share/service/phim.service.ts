@@ -17,7 +17,7 @@ export class PhimService {
   }
 
   public LayChiTietPhim(maPhim: number): Observable<Phim> {
-    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`;
     return this.http.get<Phim>(url);
   }
 

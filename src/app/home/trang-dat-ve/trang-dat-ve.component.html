@@ -11,14 +11,12 @@
     <div class="movie_details">
       <div class="row">
         <div class="movie_img">
-          <img src="../../../assets/img/thor-ragnarok-15088151416399.jpg" alt="">
+          <img src={{phim.HinhAnh}} alt="">
         </div>
         <div class="movie_title">
-          <span>07.06.2019</span>
-          <h1>Thor: Ranakor</h1>
-          <p>Having thought that monogamy was never possible, a commitment-phobic career woman may have to face her
-            fears when she meets a good guy.</p>
-
+          <span>{{phim.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</span>
+          <h1>{{phim.TenPhim}}</h1>
+          <p>{{phim.MoTa}}</p>
         </div>
       </div>
 
