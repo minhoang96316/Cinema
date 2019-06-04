@@ -16,10 +16,35 @@ export class TrangDatVeComponent implements OnInit {
   public MaLichChieu: string;
   public DanhSachGhe: any[] = [];
   phim: Phim = JSON.parse(localStorage.getItem('ChiTietPhim'));
+  userName = JSON.parse(localStorage.getItem('loginUser')).HoTen;
   tienVe = 0;
   tienCombo = 0;
   tongTien = 0;
+  phut = 5;
+  giay = 0;
   constructor(private route: ActivatedRoute, private veService: VeService, private router: Router) { }
+
+  scrollToElement(id): void {
+    const element = document.getElementById(id);
+    console.log(id);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'center' });
+  }
+
+  demNguoc() {
+    const timeout = setTimeout(() => {
+      this.giay--;
+      this.demNguoc();
+    }, 1000);
+    if (this.giay === -1) {
+      this.phut -= 1;
+      this.giay = 59;
+    }
+    if (this.phut === -1) {
+      clearTimeout(timeout);
+      alert('Hết giờ');
+      this.router.navigate(['/home']);
+    }
+  }
   LayTaiKhoanNguoiDung() {
     const nguoiDungHienTai = JSON.parse(localStorage.getItem('loginUser'));
     if (nguoiDungHienTai !== null) {
@@ -48,18 +73,22 @@ export class TrangDatVeComponent implements OnInit {
       TaiKhoanNguoiDung: this.LayTaiKhoanNguoiDung(),
       DanhSachVe: this.dsGhe.DanhSachGheDangDat,
     };
-    console.log(ve);
-    this.veService.DatVe(ve).subscribe(
-      (result) => {
-        console.log(result);
-        this.router.navigate(['/home']);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    if (ve.DanhSachVe.length !== 0) {
+      this.veService.DatVe(ve).subscribe(
+        (result) => {
+          console.log(result);
+          this.router.navigate(['/home']);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    } else {
+      alert('Bạn chưa chọn ghế');
+    }
   }
   ngOnInit() {
+    this.demNguoc();
     this.route.params
       .subscribe((result) => {
         this.MaLichChieu = result.maLichChieu;

@@ -23,7 +23,7 @@ export class LoginUserGuard implements CanActivate {
       return true;
     }
     alert('Vui lòng đăng nhập tài khoản user');
-    this.router.navigate(['/home']);
+    return false;
   }
   constructor(private router: Router) {
   }
