@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: '', redirectTo: route, pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule', canActivate: [LoginAdminGuard] },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', redirectTo: route, pathMatch: 'full' }
 ];
 
 @NgModule({
