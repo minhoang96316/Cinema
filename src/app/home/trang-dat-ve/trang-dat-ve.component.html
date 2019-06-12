@@ -2,7 +2,7 @@
     <a [routerLink]="['/home']" class="logo">
       <img src="../../../assets/img/web-logo.png" alt="">
     </a>
-    <nav class="header__menu">
+    <nav class="header__menu" id="header_menu">
       <ul class="mb-0">
         <li>
           <a (click)="scrollToElement('Ghe')">Chọn ghế</a>
@@ -24,7 +24,7 @@
   <span class="text-success">{{giay}}</span>
 </p>
 <div class="myBookingpage" id="Ghe">
-  <div class="myChair">
+  <div class="myChair" id="Chair">
     <app-danh-sach-ghe [mangGhe]="DanhSachGhe" (emitTongTienVe)="tongTienVe($event)"></app-danh-sach-ghe>
   </div>
 
@@ -40,7 +40,7 @@
         <div class="movie_title">
           <span>{{phim.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</span>
           <h1>{{phim.TenPhim}}</h1>
-          <p id="Phim">{{phim.MoTa}}</p>
+          <p id="Phim">{{phim.MoTa |slicetext:'100'}}</p>
         </div>
       </div>
 

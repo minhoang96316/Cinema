@@ -92,3 +92,18 @@ span{
     border: 1px solid green;
     background: green;
 }
+//responsive
+
+@media only screen and (max-width: 500px){
+    .detail_detail img{
+    
+        box-shadow: 0 0 16px 0 rgba(14, 14, 14, 0.5);
+    }
+    .detail_content span,p{
+        display: none
+    }
+    
+    .button_booking{ 
+        height: 300px;
+    }
+  }

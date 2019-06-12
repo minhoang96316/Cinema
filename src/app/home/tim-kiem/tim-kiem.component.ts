@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Phim } from 'src/app/share/model/Phim';
 import { ActivatedRoute } from '@angular/router';
 import { PhimService } from 'src/app/share/service/phim.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-tim-kiem',
   templateUrl: './tim-kiem.component.html',
   styleUrls: ['./tim-kiem.component.scss']
 })
 export class TimKiemComponent implements OnInit {
+ 
+  
 
   DanhSachPhimDangChieu: Phim[] = [];
   searchStatus = false;
@@ -20,14 +24,14 @@ export class TimKiemComponent implements OnInit {
   titlefilm = '';
   datefilm = '';
   idlich = 0;
-
-
+  
 
   constructor(private phim: PhimService, private chiTietPhim: PhimService, private route: ActivatedRoute) { }
 
   onClickSearchMenuBar() {
     this.searchStatus = !this.searchStatus;
   }
+  
   LayThongTinPhim(id) {
     this.chiTietPhim.LayChiTietPhim(id)
       .subscribe((result: Phim) => {
@@ -36,11 +40,11 @@ export class TimKiemComponent implements OnInit {
         if (this.titlefilm !== '') {
           this.searchStatus2 = !this.searchStatus2;
         }
-
         console.log(result);
       },
         (error) => { console.log(error); });
   }
+
   LayDate(date) {
     this.datefilm = date;
     this.searchStatus2 = !this.searchStatus2;
@@ -62,7 +66,13 @@ export class TimKiemComponent implements OnInit {
     }
   }
 
-
+  loiNhap(){
+    if(this.titlefilm == '')
+    Swal.fire({
+      text: 'Vui Lòng Chọn Tên Phim',
+      type: 'error'
+    })
+  }
   ngOnInit() {
     this.phim.LayDanhSachPhim().subscribe(
       result => {

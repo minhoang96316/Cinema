@@ -16,5 +16,9 @@ left: 0;
 img{
     height: 100%;
 }
-
-
+//reponsive
+@media only screen and (max-width: 845px){
+    .footer{
+        display: none;
+    }
+  }

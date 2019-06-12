@@ -114,3 +114,20 @@
     color: black;
     font-size: 20px;
 }
+//Responsive
+@media only screen and (max-width: 480px){
+    #Chair{
+        width: 100%;
+    }
+    .myBookingpage{
+        display: unset;
+    }
+    .myPay{
+     
+        display: block;
+        width: 100%;
+    }
+    .header__menu{
+        display: none;
+    }
+}

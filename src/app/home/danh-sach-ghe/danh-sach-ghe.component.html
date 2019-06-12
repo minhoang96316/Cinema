@@ -1,4 +1,4 @@
-<div class="container myTheater">
+<div class=" myTheater">
   
     <div class="screen">
       <img style="width: 60%" src="../../../assets/img/manhinh.png" alt="">
@@ -13,7 +13,7 @@
                 <p>E</p>
                 <p>F</p>
               </div>
-                <div class="col-5">         
+                <div class="col-5" id="ghe_location">         
                     <app-ghe *ngFor="let ghe of mangGhe" [ghe]="ghe" (click)="show()" (emitStatus)="datGheParent($event,ghe)"></app-ghe>      
                   </div>
             </div>

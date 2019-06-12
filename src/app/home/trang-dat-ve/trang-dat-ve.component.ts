@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DanhSachGheComponent } from '../danh-sach-ghe/danh-sach-ghe.component';
 import { VeService } from 'src/app/share/service/ve.service';
 import { Phim } from 'src/app/share/model/Phim';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-trang-dat-ve',
   templateUrl: './trang-dat-ve.component.html',
@@ -41,7 +41,10 @@ export class TrangDatVeComponent implements OnInit {
     }
     if (this.phut === -1) {
       clearTimeout(timeout);
-      alert('Hết giờ');
+      swal.fire({
+        text: 'hết giờ',
+        icon: "warning",
+      })
       this.router.navigate(['/home']);
     }
   }
@@ -50,7 +53,11 @@ export class TrangDatVeComponent implements OnInit {
     if (nguoiDungHienTai !== null) {
       return nguoiDungHienTai.TaiKhoan;
     } else {
-      alert('Vui lòng đăng nhập');
+      swal.fire({
+        text: 'Vui lòng đăng nhập',
+        icon: "warning",
+      })
+      
       return false;
     }
   }
@@ -84,7 +91,11 @@ export class TrangDatVeComponent implements OnInit {
         }
       );
     } else {
-      alert('Bạn chưa chọn ghế');
+      
+      swal.fire({
+        text: 'Bạn Chưa chọn ghế',
+        icon: "warning",
+      })
     }
   }
   ngOnInit() {

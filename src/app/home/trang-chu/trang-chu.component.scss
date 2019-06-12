@@ -8,10 +8,25 @@
 }
 .search{
     position: absolute;
-    top:500px;
     top: 607px;
     left: 19%;
     z-index: 5;
     width: 60%;
     
 }
+@media only screen and (max-width: 1100px){
+    .search{
+        display: none;
+    }
+}
+@media only screen and (max-width: 900px){
+    .search{
+       display: none;
+    }
+  }
+
+  @media only screen and (max-width: 845px){
+    .footer{
+        display: none;
+    }
+  }

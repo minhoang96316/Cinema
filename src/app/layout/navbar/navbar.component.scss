@@ -27,12 +27,7 @@
     margin:0 10px;
     
 }
-.header__menu ul li a{
-    font-size: 18px;
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
-}
+v
 .header__menu ul li:hover a {
     color:#FB4226;
     transition: all 0.5s;
@@ -165,3 +160,10 @@ input.ng-invalid{
 input.ng-valid{
     border-left: 5px solid green;
 }
+@media only screen and (max-width: 480px){
+    .header__menu {
+        display: none
+       
+    }
+}
+  

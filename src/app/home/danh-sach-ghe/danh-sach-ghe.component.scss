@@ -38,3 +38,22 @@
 .btn_chuadat{
     background-color: #cecece;
 }
+//Responsive
+@media only screen and (max-width: 480px){
+   .note_content{
+       width: 100%;
+       margin: 0;
+   }
+   .myTheater{
+       width: 100%;
+   }
+   #ghe_location{
+    flex: 0 0 83.333333%;
+    max-width: 75%;
+   }
+   .ghe_id{
+    margin-left: 9%;
+    flex: none;
+   }
+   
+}

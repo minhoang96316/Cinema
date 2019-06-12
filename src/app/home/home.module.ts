@@ -29,7 +29,7 @@ import { DanhSachGheComponent } from './danh-sach-ghe/danh-sach-ghe.component';
 import { TimKiemComponent } from './tim-kiem/tim-kiem.component';
 import { ComboBapNuocComponent } from './combo-bap-nuoc/combo-bap-nuoc.component';
 import { ItemComboComponent } from './item-combo/item-combo.component';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -65,7 +65,13 @@ import { ItemComboComponent } from './item-combo/item-combo.component';
     CommonModule,
     LayoutModule,
     HomeRoutingModule,
-    PipeModule
+    PipeModule,
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn'
+  })
   ],
   exports: [
     LayoutHomeComponent,
